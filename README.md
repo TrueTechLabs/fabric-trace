@@ -1,5 +1,13 @@
 #### 一、项目介绍
 基于区块链Hyperledger Fabric V2.5 的农产品/商品等的通用溯源系统，部署简单，附压测工具、区块链浏览器，文档详细。可以快速使用本系统搭建自己的溯源系统，帮助想法快速落地。
+![农产品上链](https://img-blog.csdnimg.cn/direct/6c8a57e71f11491ebdeb6b1de124758a.png)
+![农产品溯源](https://img-blog.csdnimg.cn/direct/aa722749f09843daa6d327a70c5c2bf1.png)
+
+##### 项目地址：
+[https://gitee.com/real__cool/fabric-trace](https://gitee.com/real__cool/fabric-trace)
+[https://github.com/TrueTechLabs/fabric-trace](https://github.com/TrueTechLabs/fabric-trace)
+##### 搭建视频地址(正在制作中）：
+[https://space.bilibili.com/25095014](https://space.bilibili.com/25095014)
 
 #### 二、版权声明
 本项目基于Apache License 2.0开源协议，在个人的科研、学习范围内可以自由使用，请附上项目链接。如有商业需求或合作需求，需要联系作者购买授权。
@@ -100,12 +108,15 @@
 
 5. 启动后端 在fabric-trace/application/backend目录下： 执行： `go run main.go`
 
-6. 新开一个窗口，启动前端 在fabric-trace/application/web目录下： 执行： 
+6. 修改后端IP，全局搜索`119.45.247.29`，换成自己云服务的IP。
+
+7. 新开一个窗口，启动前端 在fabric-trace/application/web目录下： 执行： 
 
 	```bash
 	npm install 
 	npm run dev
 	```
+8. 在浏览器中打开：http://云服务器IP:9528 即可看到前端页面。
 
 #### 六、本项目相关的后续计划：
 
