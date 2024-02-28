@@ -86,6 +86,7 @@ func (s *SmartContract) Uplink(ctx contractapi.TransactionContextInterface, user
 		fruit.Factory_input.Fac_productionbatch = arg2
 		fruit.Factory_input.Fac_productionTime = arg3
 		fruit.Factory_input.Fac_factoryName = arg4
+		fruit.Factory_input.Fac_contactNumber = arg5
 		fruit.Factory_input.Fac_Txid = txid
 		fruit.Factory_input.Fac_Timestamp = time
 	// 运输司机
