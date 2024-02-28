@@ -23,15 +23,18 @@
 	#添加当前用户到docker用户组 
 	sudo usermod -aG docker $USER 
 	newgrp docker 
-	#向/etc/docker/daemon.json写入docker 镜像源
+	#配置docker镜像加速
+	sudo mkdir -p /etc/docker
+
+	sudo tee /etc/docker/daemon.json <<-'EOF'
 	{
-		"registry-mirrors": [
-			"https://punulfd2.mirror.aliyuncs.com",
-			"https://hub-mirror.c.163.com",
-			"https://mirror.baidubce.com"
-		]
+	  "registry-mirrors": ["https://punulfd2.mirror.aliyuncs.com"]
 	}
-	  #重启docker 
+	EOF
+
+	sudo systemctl daemon-reload
+	sudo systemctl restart docker
+	#重启docker 
 	sudo systemctl restart docker
 	```
 
