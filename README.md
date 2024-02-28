@@ -12,6 +12,8 @@
 [https://github.com/TrueTechLabs/fabric-trace](https://github.com/TrueTechLabs/fabric-trace)
 ##### 搭建视频地址(正在制作中）：
 [https://space.bilibili.com/25095014](https://space.bilibili.com/25095014)
+##### 项目文档地址(需要订阅专栏）：
+[https://blog.csdn.net/qq_41575489/category_12075943.html](https://blog.csdn.net/qq_41575489/category_12075943.html)
 
 #### 二、版权声明
 本项目基于Apache License 2.0开源协议，在个人的科研、学习范围内可以自由使用，请附上项目链接。如有商业需求或合作需求，需要联系作者购买授权。
@@ -128,13 +130,15 @@
 
 #### 六、本项目相关的后续计划：
 
-1. 本项目将持续维护，欢迎给项目点亮Star与B站三连，非常感谢！TrueTechLabs公众号（TrueTechLabs公众号将提供更多的AI与Web3的内容。）将更新此项目的区块链部分、前后端说明文档。
-此外：本项目简易的二次开发流程将在[《Fabric项目学习笔记 》](https://blog.csdn.net/qq_41575489/category_12075943.html)发布,欢迎订阅支持！
+1. 本项目将持续维护，欢迎给项目点亮Star与B站三连，非常感谢！本项目的区块链部分、前后端的说明文档以及简易的二次开发流程将在[《Fabric项目学习笔记 》](https://blog.csdn.net/qq_41575489/category_12075943.html)发布,欢迎订阅支持！
 2. 本系统的讲解课程（约2小时）、Fabric V2.5应用的课程（约10小时），将在B站上架，敬请关注！
 
 #### 七、目前已知存在的BUG：
 1. 区块链浏览器镜像拉取较慢，因为不是Docker官方的仓库，需要耐心等待。
 2. 区块链浏览器有时候会出现无法访问的情况，可以尝试重启浏览器容器。
+
+### TrueTechLabs Fabric学习交流QQ群：776873343
+
 
 ## Star History
 
