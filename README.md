@@ -25,7 +25,11 @@
 	newgrp docker 
 	#向/etc/docker/daemon.json写入docker 镜像源
 	{
-	    "registry-mirrors": ["https://punulfd2.mirror.aliyuncs.com"]
+		"registry-mirrors": [
+			"https://punulfd2.mirror.aliyuncs.com",
+			"https://hub-mirror.c.163.com",
+			"https://mirror.baidubce.com"
+		]
 	}
 	  #重启docker 
 	sudo systemctl restart docker
