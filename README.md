@@ -12,7 +12,7 @@
 [https://github.com/TrueTechLabs/fabric-trace](https://github.com/TrueTechLabs/fabric-trace)
 ##### 搭建视频地址(正在制作中）：
 [https://space.bilibili.com/25095014](https://space.bilibili.com/25095014)
-##### 项目文档地址(需要订阅专栏）：
+##### 项目文档地址(部分内容需要订阅专栏）：
 [https://blog.csdn.net/qq_41575489/category_12075943.html](https://blog.csdn.net/qq_41575489/category_12075943.html)
 
 #### 二、版权声明
