@@ -46,9 +46,8 @@
 	}
 	EOF
 
-	sudo systemctl daemon-reload
-	sudo systemctl restart docker
 	#重启docker 
+	sudo systemctl daemon-reload
 	sudo systemctl restart docker
 	```
 
@@ -102,12 +101,12 @@
 4. 启动区块链部分。在fabric-trace/blockchain/network目录下:
 
 	```bash
-	// 【仅在首次使用执行】下载Fabric Docker镜像
+	# 【仅在首次使用执行】下载Fabric Docker镜像
 	./install-fabric.sh -f 2.5.6 d 
 	```
 
 	```bash
-	// 启动区块链网络
+	# 启动区块链网络
 	./start.sh
 	```
 
@@ -123,7 +122,12 @@
 7. 新开一个窗口，启动前端 在fabric-trace/application/web目录下： 执行： 
 
 	```bash
+	# 【仅在首次运行】安装依赖
 	npm install 
+	```
+
+	```bash
+	# 启动前端
 	npm run dev
 	```
 8. 在浏览器中打开：http://云服务器IP:9528 即可看到前端页面。
@@ -137,7 +141,10 @@
 1. 区块链浏览器镜像拉取较慢，因为不是Docker官方的仓库，需要耐心等待。
 2. 区块链浏览器有时候会出现无法访问的情况，可以尝试重启浏览器容器。
 
-### TrueTechLabs Fabric学习交流QQ群：776873343
+#### 群组：
+**TrueTechLabs Fabric学习交流QQ群：776873343**
+
+![TrueTechLabs Fabric学习交流QQ群：776873343](https://img-blog.csdnimg.cn/direct/fb960c237ca3486aac477c502df0cad4.png =160x160)
 
 
 ## Star History
