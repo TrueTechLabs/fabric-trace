@@ -6,7 +6,12 @@
 ![农产品溯源](https://img-blog.csdnimg.cn/direct/aa722749f09843daa6d327a70c5c2bf1.png)
 ![区块链浏览器可视化](https://img-blog.csdnimg.cn/direct/6df49c9755d244f4ad1407342f3f1ee5.png)
 
+##### 项目地址：
+[https://gitee.com/real__cool/fabric-trace](https://gitee.com/real__cool/fabric-trace)
 
+[https://github.com/TrueTechLabs/fabric-trace](https://github.com/TrueTechLabs/fabric-trace)
+##### 搭建视频地址(正在制作中）：
+[https://space.bilibili.com/25095014](https://space.bilibili.com/25095014)
 
 #### 二、版权声明
 本项目基于Apache License 2.0开源协议，在个人的科研、学习范围内可以自由使用，请附上项目链接。如有商业需求或合作需求，需要联系作者购买授权。
@@ -127,3 +132,6 @@
 1. 区块链浏览器镜像拉取较慢，因为不是Docker官方的仓库，需要耐心等待。
 2. 区块链浏览器有时候会出现无法访问的情况，可以尝试重启浏览器容器。
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=TrueTechLabs/fabric-trace&type=Date)](https://star-history.com/#TrueTechLabs/fabric-trace&Date)
