@@ -144,7 +144,7 @@
 #### 群组：
 **TrueTechLabs Fabric学习交流QQ群：776873343**
 
-![TrueTechLabs Fabric学习交流QQ群：776873343](https://img-blog.csdnimg.cn/direct/fb960c237ca3486aac477c502df0cad4.png =160x160)
+<img src="https://img-blog.csdnimg.cn/direct/fb960c237ca3486aac477c502df0cad4.png" width="200" height="200" alt="TrueTechLabs Fabric学习交流QQ群：776873343">
 
 
 ## Star History
