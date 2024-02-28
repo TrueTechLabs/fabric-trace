@@ -127,3 +127,7 @@
 #### 七、目前已知存在的BUG：
 1. 区块链浏览器镜像拉取较慢，因为不是Docker官方的仓库，需要耐心等待。
 2. 区块链浏览器有时候会出现无法访问的情况，可以尝试重启浏览器容器。
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=TrueTechLabs/fabric-trace&type=Date)](https://star-history.com/#TrueTechLabs/fabric-trace&Date)
