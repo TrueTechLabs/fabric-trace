@@ -1,6 +1,6 @@
 >  本项目所有相关文档收录于：[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)。
 
-#### TrueTechLabs Fabric学习交流QQ群：
+#### TrueTechLabs Fabric学习交流QQ群：776873343
 <img src="https://img-blog.csdnimg.cn/direct/fb960c237ca3486aac477c502df0cad4.png" width="200" height="200" alt="TrueTechLabs Fabric学习交流QQ群：776873343">
 
 #### 一、项目介绍
@@ -97,6 +97,8 @@
 	sudo apt install jq
 	```
 
+
+
 3. 克隆本项目 
 
 	```bash
@@ -144,6 +146,7 @@
 
 1. 本项目将持续维护，欢迎给项目点亮Star与B站三连，非常感谢！本项目的区块链部分、前后端的说明文档以及简易的二次开发流程将在[《Fabric项目学习笔记 》](https://blog.csdn.net/qq_41575489/category_12075943.html)发布,欢迎订阅支持！
 2. 本系统的讲解课程（约2小时）、Fabric V2.5应用的课程（约10小时），将在B站上架，敬请关注！
+3. 支持Docker方式部署，简化部署步骤
 
 #### 七、目前已知存在的BUG：
 1. 区块链浏览器镜像拉取较慢，因为不是Docker官方的仓库，需要耐心等待。
