@@ -1,3 +1,8 @@
+>  本项目所有相关文档收录于：[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)。
+
+#### TrueTechLabs Fabric学习交流QQ群：
+<img src="https://img-blog.csdnimg.cn/direct/fb960c237ca3486aac477c502df0cad4.png" width="200" height="200" alt="TrueTechLabs Fabric学习交流QQ群：776873343">
+
 #### 一、项目介绍
 基于区块链Hyperledger Fabric V2.5 的农产品/商品等的通用溯源系统，部署简单，附压测工具、区块链浏览器，文档详细。可以快速使用本系统搭建自己的溯源系统，帮助想法快速落地。
 
@@ -10,8 +15,8 @@
 [https://gitee.com/real__cool/fabric-trace](https://gitee.com/real__cool/fabric-trace)
 
 [https://github.com/TrueTechLabs/fabric-trace](https://github.com/TrueTechLabs/fabric-trace)
-##### 搭建视频地址(正在制作中）：
-[https://space.bilibili.com/25095014](https://space.bilibili.com/25095014)
+##### 搭建视频地址：
+[https://www.bilibili.com/video/BV1Ar421H7TK](https://www.bilibili.com/video/BV1Ar421H7TK)
 ##### 项目文档地址(部分内容需要订阅专栏）：
 [https://blog.csdn.net/qq_41575489/category_12075943.html](https://blog.csdn.net/qq_41575489/category_12075943.html)
 
@@ -25,6 +30,8 @@
 区块链技术的出现，为溯源系统的建设提供了新的思路。区块链技术的不可篡改性、去中心化、可追溯等特点，使得区块链技术成为溯源系统的理想选择。本项目基于Hyperledger Fabric V2.5，实现了一个农产品溯源系统。 在本区块链系统中，有5个内置的角色：种植户、工厂、驾驶员、商店、消费者。其中种植户、工厂、驾驶员、商店可以将信息上链，消费者有信息溯源权限。上述可以上链信息的角色各可以输入5个农产品的属性，方便二次开发。本项目的目标是作为Fabric V2.5下的一个通用溯源模板。
 
 #### 五、搭建步骤
+> 如果部分内容与视频不一致请以本文档为准
+
  强烈推荐：使用云服务器搭建本系统，虚拟机问题较多。点击此链接购买腾讯云服务器：[https://curl.qcloud.com/Sjy0zKjy](https://curl.qcloud.com/Sjy0zKjy) 点击首单特惠，购买2核4G或以上的服务器，218/年，如果后续准备做程序开发可以用新用户优惠买三年的，安装ubuntu20.04系统。
 
 严格按照以下步骤操作：
@@ -90,8 +97,6 @@
 	sudo apt install jq
 	```
 
-
-
 3. 克隆本项目 
 
 	```bash
@@ -130,7 +135,10 @@
 	# 启动前端
 	npm run dev
 	```
-8. 在浏览器中打开：http://云服务器IP:9528 即可看到前端页面。
+8. 在腾讯云轻量应用服务器防火墙页面，放行TCP端口`8080,9090,9528`
+![防火墙配置](https://img-blog.csdnimg.cn/direct/d12870cf7a464796b0f635cdc9c1708b.png)
+
+10. 在浏览器中打开：http://云服务器IP:9528 即可看到前端页面。
 
 #### 六、本项目相关的后续计划：
 
@@ -140,13 +148,3 @@
 #### 七、目前已知存在的BUG：
 1. 区块链浏览器镜像拉取较慢，因为不是Docker官方的仓库，需要耐心等待。
 2. 区块链浏览器有时候会出现无法访问的情况，可以尝试重启浏览器容器。
-
-#### 群组：
-**TrueTechLabs Fabric学习交流QQ群：776873343**
-
-<img src="https://img-blog.csdnimg.cn/direct/fb960c237ca3486aac477c502df0cad4.png" width="200" height="200" alt="TrueTechLabs Fabric学习交流QQ群：776873343">
-
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=TrueTechLabs/fabric-trace&type=Date)](https://star-history.com/#TrueTechLabs/fabric-trace&Date)
