@@ -3,7 +3,7 @@
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
 
       <div class="title-container">
-        <h3 class="title">基于区块链的农产品溯源系统</h3>
+        <h3 class="title">基于区块链的商品溯源系统</h3>
       </div>
       <div v-show="isLoginPage">
         <el-form-item prop="username">
@@ -135,14 +135,14 @@ export default {
         userType: ''
       },
       options: [{
-        value: '种植户',
-        label: '种植户'
+        value: '生产商',
+        label: '生产商'
       }, {
-        value: '工厂',
-        label: '工厂'
+        value: '批发商',
+        label: '批发商'
       }, {
-        value: '运输司机',
-        label: '运输司机'
+        value: '物流',
+        label: '物流'
       }, {
         value: '商店',
         label: '商店'
@@ -229,7 +229,7 @@ $cursor: #fff;
 /* reset element-ui css */
 .login-container {
   // 添加背景图片
-  background-image: url("../../assets/login_images/nature.jpg");
+  background-image: url("../../assets/login_images/store.jpg");
   background-size: cover;
   background-position: center;
 

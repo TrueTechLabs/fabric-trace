@@ -96,7 +96,7 @@ func buildArgs(c *gin.Context, farmer_traceability_code string) []string {
 	args = append(args, userID.(string))
 	fmt.Print(userID)
 	// 种植户不需要输入溯源码，其他用户需要，通过雪花算法生成ID
-	if userType == "种植户" {
+	if userType == "生产商" {
 		args = append(args, farmer_traceability_code)
 	} else {
 		args = append(args, c.PostForm("traceability_code"))

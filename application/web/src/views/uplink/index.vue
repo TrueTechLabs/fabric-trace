@@ -6,45 +6,45 @@
     </div>
     <div>
       <el-form ref="form" :model="tracedata" label-width="80px" size="mini" style="">
-        <el-form-item v-show="userType!='种植户'&userType!='消费者'" label="溯源码:" style="width: 300px" label-width="120px">
+        <el-form-item v-show="userType!='生产商'&userType!='消费者'" label="溯源码:" style="width: 300px" label-width="120px">
           <el-input v-model="tracedata.traceability_code" />
         </el-form-item>
 
-        <div v-show="userType=='种植户'">
-          <el-form-item label="农产品名称:" style="width: 300px" label-width="120px">
+        <div v-show="userType=='生产商'">
+          <el-form-item label="商品名称:" style="width: 300px" label-width="120px">
             <el-input v-model="tracedata.Farmer_input.Fa_fruitName" />
           </el-form-item>
           <el-form-item label="产地:" style="width: 300px" label-width="120px">
             <el-input v-model="tracedata.Farmer_input.Fa_origin" />
           </el-form-item>
-          <el-form-item label="种植时间:" style="width: 300px" label-width="120px">
+          <el-form-item label="产品规格" style="width: 300px" label-width="120px">
             <el-input v-model="tracedata.Farmer_input.Fa_plantTime" />
           </el-form-item>
-          <el-form-item label="采摘时间:" style="width: 300px" label-width="120px">
+          <el-form-item label="生产时间:" style="width: 300px" label-width="120px">
             <el-input v-model="tracedata.Farmer_input.Fa_pickingTime" />
           </el-form-item>
-          <el-form-item label="种植户名称:" style="width: 300px" label-width="120px">
+          <el-form-item label="生产商名称:" style="width: 300px" label-width="120px">
             <el-input v-model="tracedata.Farmer_input.Fa_farmerName" />
           </el-form-item>
         </div>
-        <div v-show="userType=='工厂'">
+        <div v-show="userType=='批发商'">
           <el-form-item label="商品名称:" style="width: 300px" label-width="120px">
             <el-input v-model="tracedata.Factory_input.Fac_productName" />
           </el-form-item>
-          <el-form-item label="生产批次:" style="width: 300px" label-width="120px">
+          <el-form-item label="仓库号:" style="width: 300px" label-width="120px">
             <el-input v-model="tracedata.Factory_input.Fac_productionbatch" />
           </el-form-item>
-          <el-form-item label="生产时间:" style="width: 300px" label-width="120px">
+          <el-form-item label="入库时间:" style="width: 300px" label-width="120px">
             <el-input v-model="tracedata.Factory_input.Fac_productionTime" />
           </el-form-item>
-          <el-form-item label="工厂名称与厂址:" style="width: 300px" label-width="120px">
+          <el-form-item label="批发商名称与厂址:" style="width: 300px" label-width="120px">
             <el-input v-model="tracedata.Factory_input.Fac_factoryName" />
           </el-form-item>
           <el-form-item label="联系电话:" style="width: 300px" label-width="120px">
             <el-input v-model="tracedata.Factory_input.Fac_contactNumber" />
           </el-form-item>
         </div>
-        <div v-show="userType=='运输司机'">
+        <div v-show="userType=='物流'">
           <el-form-item label="姓名:" style="width: 300px" label-width="120px">
             <el-input v-model="tracedata.Driver_input.Dr_name" />
           </el-form-item>
@@ -150,21 +150,21 @@ export default {
       formData.append('traceability_code', this.tracedata.traceability_code)
       // 根据不同的用户给arg1、arg2、arg3..赋值,
       switch (this.userType) {
-        case '种植户':
+        case '生产商':
           formData.append('arg1', this.tracedata.Farmer_input.Fa_fruitName)
           formData.append('arg2', this.tracedata.Farmer_input.Fa_origin)
           formData.append('arg3', this.tracedata.Farmer_input.Fa_plantTime)
           formData.append('arg4', this.tracedata.Farmer_input.Fa_pickingTime)
           formData.append('arg5', this.tracedata.Farmer_input.Fa_farmerName)
           break
-        case '工厂':
+        case '批发商':
           formData.append('arg1', this.tracedata.Factory_input.Fac_productName)
           formData.append('arg2', this.tracedata.Factory_input.Fac_productionbatch)
           formData.append('arg3', this.tracedata.Factory_input.Fac_productionTime)
           formData.append('arg4', this.tracedata.Factory_input.Fac_factoryName)
           formData.append('arg5', this.tracedata.Factory_input.Fac_contactNumber)
           break
-        case '运输司机':
+        case '物流':
           formData.append('arg1', this.tracedata.Driver_input.Dr_name)
           formData.append('arg2', this.tracedata.Driver_input.Dr_age)
           formData.append('arg3', this.tracedata.Driver_input.Dr_phone)

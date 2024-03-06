@@ -70,7 +70,7 @@ func (s *SmartContract) Uplink(ctx contractapi.TransactionContextInterface, user
 	// 不同用户类型的上链的参数不一致
 	switch userType {
 	// 种植户
-	case "种植户":
+	case "生产商":
 		// 将传入的农产品上链信息转换为Farmer_input结构体
 		fruit.Farmer_input.Fa_fruitName = arg1
 		fruit.Farmer_input.Fa_origin = arg2
@@ -80,7 +80,7 @@ func (s *SmartContract) Uplink(ctx contractapi.TransactionContextInterface, user
 		fruit.Farmer_input.Fa_Txid = txid
 		fruit.Farmer_input.Fa_Timestamp = time
 	// 工厂
-	case "工厂":
+	case "批发商":
 		// 将传入的农产品上链信息转换为Factory_input结构体
 		fruit.Factory_input.Fac_productName = arg1
 		fruit.Factory_input.Fac_productionbatch = arg2
@@ -90,7 +90,7 @@ func (s *SmartContract) Uplink(ctx contractapi.TransactionContextInterface, user
 		fruit.Factory_input.Fac_Txid = txid
 		fruit.Factory_input.Fac_Timestamp = time
 	// 运输司机
-	case "运输司机":
+	case "物流":
 		// 将传入的农产品上链信息转换为Driver_input结构体
 		fruit.Driver_input.Dr_name = arg1
 		fruit.Driver_input.Dr_age = arg2
