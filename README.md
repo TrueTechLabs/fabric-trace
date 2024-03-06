@@ -1,14 +1,17 @@
 >  本项目所有相关文档包括区块链设计、后端设计、前端设计以及简易的二次开发步骤收录于：[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)。
 
 #### TrueTechLabs Fabric学习交流QQ群：776873343
-![TrueTechLabs Fabric学习交流QQ群：776873343](https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062026784.png)
+
+<img src="https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062026784.png" alt="图片描述" style="width:200px;">
+
 #### 一、项目介绍
 基于区块链Hyperledger Fabric V2.5 的农产品/商品等的通用溯源系统，部署简单，附压测工具tape、区块链浏览器，文档详细。可以快速使用本系统搭建自己的溯源系统，帮助想法快速落地。
 
-![多类型用户注册](https://img-blog.csdnimg.cn/direct/1933eb3ffec54ff7b2f45cad5b5fd466.png)
-![农产品上链](https://img-blog.csdnimg.cn/direct/6c8a57e71f11491ebdeb6b1de124758a.png)
-![农产品溯源](https://img-blog.csdnimg.cn/direct/aa722749f09843daa6d327a70c5c2bf1.png)
-![区块链浏览器可视化](https://img-blog.csdnimg.cn/direct/6df49c9755d244f4ad1407342f3f1ee5.png)
+![多类型用户注册](https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062029060.png)
+
+![农产品上链](https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062031538.png)
+![农产品溯源](https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062032189.png)
+![区块链浏览器可视化](https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062033224.png)
 
 ##### 项目地址：
 **Github**:
@@ -139,8 +142,7 @@
 	npm run dev
 	```
 8. 在腾讯云轻量应用服务器防火墙页面，放行TCP端口`8080,9090,9528`
-![防火墙配置](https://img-blog.csdnimg.cn/direct/d12870cf7a464796b0f635cdc9c1708b.png)
-
+![防火墙配置](https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062033585.png)
 9. 在浏览器中打开：http://云服务器IP:9528 即可看到前端页面。
 10. 关闭项目步骤
 前后端使用`ctrl+c`指令即可关闭，区块链部分在`network`目录下使用`./stop.sh`脚本关闭，使用VSCode打开项目到`fabric-trace`路径下。
