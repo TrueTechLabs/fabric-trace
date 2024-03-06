@@ -1,10 +1,11 @@
->  本项目所有相关文档收录于：[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)。
+>  本项目所有相关文档包括区块链设计、后端设计、前端设计以及简易的二次开发步骤收录于：[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)。
 
 #### TrueTechLabs Fabric学习交流QQ群：776873343
-<img src="https://img-blog.csdnimg.cn/direct/fb960c237ca3486aac477c502df0cad4.png" width="200" height="200" alt="TrueTechLabs Fabric学习交流QQ群：776873343">
+<img src="[https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062026784.png](https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062026784.png)" width="200" height="200" alt="TrueTechLabs Fabric学习交流QQ群：776873343">
+
 
 #### 一、项目介绍
-基于区块链Hyperledger Fabric V2.5 的农产品/商品等的通用溯源系统，部署简单，附压测工具、区块链浏览器，文档详细。可以快速使用本系统搭建自己的溯源系统，帮助想法快速落地。
+基于区块链Hyperledger Fabric V2.5 的农产品/商品等的通用溯源系统，部署简单，附压测工具tape、区块链浏览器，文档详细。可以快速使用本系统搭建自己的溯源系统，帮助想法快速落地。
 
 ![多类型用户注册](https://img-blog.csdnimg.cn/direct/1933eb3ffec54ff7b2f45cad5b5fd466.png)
 ![农产品上链](https://img-blog.csdnimg.cn/direct/6c8a57e71f11491ebdeb6b1de124758a.png)
@@ -12,9 +13,11 @@
 ![区块链浏览器可视化](https://img-blog.csdnimg.cn/direct/6df49c9755d244f4ad1407342f3f1ee5.png)
 
 ##### 项目地址：
+**Github**:
+[https://github.com/TrueTechLabs/fabric-trace](https://github.com/TrueTechLabs/fabric-trace)
+**Gitee**:
 [https://gitee.com/real__cool/fabric-trace](https://gitee.com/real__cool/fabric-trace)
 
-[https://github.com/TrueTechLabs/fabric-trace](https://github.com/TrueTechLabs/fabric-trace)
 ##### 搭建视频地址：
 [https://www.bilibili.com/video/BV1Ar421H7TK](https://www.bilibili.com/video/BV1Ar421H7TK)
 ##### 项目文档地址(部分内容需要订阅专栏）：
@@ -32,7 +35,7 @@
 #### 五、搭建步骤
 > 如果部分内容与视频不一致请以本文档为准
 
- 强烈推荐：使用云服务器搭建本系统，虚拟机问题较多。点击此链接购买腾讯云服务器：[https://curl.qcloud.com/Sjy0zKjy](https://curl.qcloud.com/Sjy0zKjy) 点击首单特惠，购买2核4G或以上的服务器，218/年，如果后续准备做程序开发可以用新用户优惠买三年的，安装ubuntu20.04系统。
+ 强烈推荐：使用云服务器搭建本系统，虚拟机问题较多。点击此链接购买腾讯云服务器：[https://curl.qcloud.com/Sjy0zKjy](https://curl.qcloud.com/Sjy0zKjy) 点击首单特惠，购买2核4G或以上的服务器，218/年（价格经常会调整），如果后续准备做程序开发可以用新用户优惠买三年的，安装Ubuntu20.04系统。
 
 严格按照以下步骤操作：
 
@@ -108,7 +111,7 @@
 4. 启动区块链部分。在fabric-trace/blockchain/network目录下:
 
 	```bash
-	# 【仅在首次使用执行】下载Fabric Docker镜像
+	# 仅在首次使用执行：下载Fabric Docker镜像
 	./install-fabric.sh -f 2.5.6 d 
 	```
 
@@ -129,7 +132,7 @@
 7. 新开一个窗口，启动前端 在fabric-trace/application/web目录下： 执行： 
 
 	```bash
-	# 【仅在首次运行】安装依赖
+	# 仅在首次运行执行：安装依赖
 	npm install 
 	```
 
@@ -140,15 +143,15 @@
 8. 在腾讯云轻量应用服务器防火墙页面，放行TCP端口`8080,9090,9528`
 ![防火墙配置](https://img-blog.csdnimg.cn/direct/d12870cf7a464796b0f635cdc9c1708b.png)
 
-10. 在浏览器中打开：http://云服务器IP:9528 即可看到前端页面。
-
+9. 在浏览器中打开：http://云服务器IP:9528 即可看到前端页面。
+10. 关闭项目步骤
+前后端使用`ctrl+c`指令即可关闭，区块链部分在`network`目录下使用`./stop.sh`脚本关闭，使用VSCode打开项目到`fabric-trace`路径下。
 #### 六、本项目相关的后续计划：
 
-1. 本项目将持续维护，欢迎给项目点亮Star与B站三连，非常感谢！本项目的区块链部分、前后端的说明文档以及简易的二次开发流程将在[《Fabric项目学习笔记 》](https://blog.csdn.net/qq_41575489/category_12075943.html)发布,欢迎订阅支持！
+1. 本项目将持续维护，欢迎给项目点亮Star与B站三连，非常感谢！本项目的区块链部分、前后端的说明文档以及简易的二次开发流程已在[《Fabric项目学习笔记 》](https://blog.csdn.net/qq_41575489/category_12075943.html)专栏发布,欢迎订阅支持！
 2. 本系统的讲解课程（约2小时）、Fabric V2.5应用的课程（约10小时），将在B站上架，敬请关注！
 3. 支持Docker方式部署，简化部署步骤
-
-#### 七、目前已知存在的BUG：
+#### 七、目前已知存在的问题：
 1. 区块链浏览器镜像拉取较慢，因为不是Docker官方的仓库，需要耐心等待。
 2. 区块链浏览器有时候会出现无法访问的情况，可以尝试重启浏览器容器。
 
