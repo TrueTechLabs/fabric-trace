@@ -1,4 +1,4 @@
->  本项目所有相关文档包括区块链设计、后端设计、前端设计以及简易的二次开发步骤收录于：[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)。
+>  本项目所有相关文档包括区块链设计、后端设计、前端设计、结合IPFS改进以及简易的二次开发步骤收录于：[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)。
 
 #### TrueTechLabs Fabric学习交流QQ群：776873343
 ![TrueTechLabs Fabric学习交流QQ群：776873343](https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062054644.jpg)
@@ -14,6 +14,7 @@
 ##### 项目地址：
 **Github**:
 [https://github.com/TrueTechLabs/fabric-trace](https://github.com/TrueTechLabs/fabric-trace)
+
 **Gitee**:
 [https://gitee.com/real__cool/fabric-trace](https://gitee.com/real__cool/fabric-trace)
 
