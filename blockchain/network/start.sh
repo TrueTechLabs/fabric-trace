@@ -1,5 +1,7 @@
 #!/bin/bash
-
+./stop.sh
+# 启动mysql容器
+docker run --name fabrictrace-mysql -p 3337:3306 -e MYSQL_ROOT_PASSWORD=fabrictrace -d mysql:8
 # 要检查的镜像版本
 image_versions=("2.5.6")
 
@@ -26,9 +28,7 @@ done
 # 部署链码，使用basic链码
 ./network.sh deployCC -ccn trace -ccp ../chaincode -ccl go
 cp -r organizations explorer/
-# 启动mysql容器
-docker run --name fabrictrace-mysql -p 3337:3306 -e MYSQL_ROOT_PASSWORD=fabrictrace -d mysql:8
 
 # 启动区块链浏览器
-docker compose -f explorer/docker-compose.yaml up 
+docker compose -f explorer/docker-compose.yaml up -d
 
