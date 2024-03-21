@@ -1,6 +1,7 @@
 >  本项目所有相关文档包括区块链设计、后端设计、前端设计、结合IPFS改进以及简易的二次开发步骤收录于：[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)。
 
 #### 给项目点上Star，加入TrueTechLabs Fabric学习交流QQ群：776873343
+群内包含此项目的区块链部分、应用后端部分的代码说明文档，项目二次开发以及添加IPFS上传文件功能文档收录在专栏：[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)。
 ![TrueTechLabs Fabric学习交流QQ群：776873343](https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062054644.jpg)
 #### 一、项目介绍
 基于区块链Hyperledger FabricV2.5的农产品溯源/商品/通用溯源应用模板，部署简单，附压测工具tape、区块链浏览器，文档详细。可以快速使用本系统搭建自己的溯源系统，帮助想法快速落地。
