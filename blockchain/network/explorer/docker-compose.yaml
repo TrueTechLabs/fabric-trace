@@ -13,8 +13,8 @@ networks:
 services:
 
   explorerdb.mynetwork.com:
-    # 使用南京大学镜像源，原来是ghcr.io
-    image: ghcr.nju.edu.cn/hyperledger-labs/explorer-db:latest
+    # 将镜像上传至了DockerHub，加速下载，原来是ghcr.io
+    image: realhaha/explorer-db:1.0
     container_name: explorerdb.mynetwork.com
     hostname: explorerdb.mynetwork.com
     environment:
@@ -32,8 +32,8 @@ services:
       - mynetwork.com
 
   explorer.mynetwork.com:
-    # 使用南京大学镜像源，原来是ghcr.io
-    image: ghcr.nju.edu.cn/hyperledger-labs/explorer:latest
+    # 将镜像上传至了DockerHub，加速下载，原来是ghcr.io
+    image: realhaha/explorer:1.0
     container_name: explorer.mynetwork.com
     hostname: explorer.mynetwork.com
     environment:
