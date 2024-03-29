@@ -153,6 +153,28 @@
 9. 在浏览器中打开：http://云服务器IP:9528 即可看到前端页面。
 10. 关闭项目步骤
 前后端使用ctrl+c指令即可关闭，区块链部分在network目录下使用./stop.sh脚本关闭，如果不正确关闭可能会影响下一次启动，处理方案是使用命令关闭相关进程。
+11. 使用tape对项目进行压力测试
+根据blockchain/chaincode/chaincode/smartcontract.go中的合约函数的签名，编写压测的参数，需要修改的内容是tape目录下的yaml文件中的args。args第一个参数是函数名，后面的参数是函数的参数。例如：
+	```yaml
+	args:
+	# 函数名
+	- RegisterUser
+	# userID string
+	- 1
+	#userType string
+	- randomString8
+	# realInfoHash string
+	- randomString8
+	```
+执行`./tape --config config_register.yaml -n 1`即可完成用户1的注册，然后可以对农产品上链操作与获取用户信息函数进行压测。更多的压测案例可以根据合约函数的签名进行修改。
+附农产品上链操作与获取用户信息函数进行压测操作指令：
+
+```	bash
+./tape --config config_invoke.yaml -n 100
+./tape --config config_query.yaml -n 100
+```
+
+
 #### 六、本项目相关的后续计划：
 
 1. 本项目将持续维护，欢迎给项目点亮Star与B站三连，非常感谢！本项目的区块链部分、前后端的说明文档以及简易的二次开发流程已在[《Fabric项目学习笔记 》](https://blog.csdn.net/qq_41575489/category_12075943.html)专栏发布,欢迎订阅支持！
