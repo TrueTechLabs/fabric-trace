@@ -80,7 +80,7 @@
         </div>
       </el-form>
       <span slot="footer" style="color: gray;" class="dialog-footer">
-        <el-button v-show="userType != '消费者'" type="primary" plain style="margin-left: 220px;" @click="submittracedata()" >提 交</el-button>
+        <el-button v-show="userType != '消费者'" type="primary" plain style="margin-left: 220px;" @click="submittracedata()">提 交</el-button>
       </span>
       <span v-show="userType == '消费者'" slot="footer" style="color: gray;" class="dialog-footer">
         消费者没有权限录入！请使用溯源功能!
