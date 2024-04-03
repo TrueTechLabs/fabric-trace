@@ -20,10 +20,9 @@ func Uplink(c *gin.Context) {
 		return
 	}
 	c.JSON(200, gin.H{
-		"code":              200,
-		"message":           "uplink success",
-		"txid":              res,
-		"traceability_code": farmer_traceability_code,
+		"code":    200,
+		"message": "uplink success",
+		"txid":    res,
 	})
 }
 
