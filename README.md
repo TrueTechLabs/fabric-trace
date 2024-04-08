@@ -2,7 +2,8 @@
 
 #### 如果项目有帮助请给项目点上Star，我们将十分感谢！ 欢迎加入TrueTechLabs Fabric学习交流QQ群：776873343
 群内可免费阅读此项目的区块链部分、应用后端部分的代码说明文档。项目二次开发以及添加IPFS上传文件功能等文档收录在专栏：[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)。
-项目演示站点：http://realcool.top:9528/ 由于服务器带宽问题，初次加载登录页面约2分钟
+
+**项目演示站点:** http://realcool.top:9090/
 
 ![TrueTechLabs Fabric学习交流QQ群：776873343](https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062054644.jpg)
 #### 一、项目介绍
