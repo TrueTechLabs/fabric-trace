@@ -1,14 +1,20 @@
->  本项目所有相关文档包括区块链设计、后端设计、前端设计、二次开发与结合IPFS改进以及简易的二次开发步骤收录于：[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)。
+
+
+**项目演示站点:** http://realcool.top:9090/
+
+与B站官方合作，本项目代码讲解与二次开发课程已发布，支持试看: [B站：Fabric V2.5通用溯源项目讲解与二次开发课程](https://www.bilibili.com/cheese/play/ss15923?bsource=link_copy)
+
+Fabric V2.5通用溯源课程活动：[腾讯文档：提交源码仓库地址/PPT/视频获得返现50-300元](https://docs.qq.com/form/page/DQ3ZJUERPVXJCdUtX)
 
 #### 如果项目有帮助请给项目点上Star，我们将十分感谢！ 欢迎加入TrueTechLabs Fabric学习交流QQ群：776873343
 群内可免费阅读此项目的区块链部分、应用后端部分的代码说明文档。项目二次开发以及添加IPFS上传文件功能等文档收录在专栏：[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)。
 
-**项目演示站点:** http://realcool.top:9090/
 
 ![TrueTechLabs Fabric学习交流QQ群：776873343](https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062054644.jpg)
 #### 一、项目介绍
 基于区块链Hyperledger FabricV2.5的农产品溯源/商品/通用溯源应用模板，部署简单，附压测工具tape、区块链浏览器，文档详细。可以快速使用本系统搭建自己的溯源系统，帮助想法快速落地。采用的技术栈：Fabric V2.5、Gin、Vue.js、Mysql。
-![10b244362bd18f0688ae6fd3cb62397](https://github.com/TrueTechLabs/fabric-trace/assets/49872902/60337eb8-1799-435f-b0a5-8ac61761aa28)
+[10b244362bd18f0688ae6fd3cb62397](https://github.com/TrueTechLabs/fabric-trace/assets/49872902/60337eb8-1799-435f-b0a5-8ac61761aa28)
+
 
 
 
