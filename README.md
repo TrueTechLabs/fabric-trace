@@ -13,7 +13,8 @@ Fabric V2.5通用溯源课程活动：[腾讯文档：提交源码仓库地址/P
 ![TrueTechLabs Fabric学习交流QQ群：776873343](https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062054644.jpg)
 #### 一、项目介绍
 基于区块链Hyperledger FabricV2.5的农产品溯源/商品/通用溯源应用模板，部署简单，附压测工具tape、区块链浏览器，文档详细。可以快速使用本系统搭建自己的溯源系统，帮助想法快速落地。采用的技术栈：Fabric V2.5、Gin、Vue.js、Mysql。
-[10b244362bd18f0688ae6fd3cb62397](https://github.com/TrueTechLabs/fabric-trace/assets/49872902/60337eb8-1799-435f-b0a5-8ac61761aa28)
+
+![10b244362bd18f0688ae6fd3cb62397](https://github.com/TrueTechLabs/fabric-trace/assets/49872902/60337eb8-1799-435f-b0a5-8ac61761aa28)
 
 
 
