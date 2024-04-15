@@ -10,7 +10,11 @@ import (
 // 保存了农产品上链与查询的函数
 
 func Uplink(c *gin.Context) {
-	farmer_traceability_code := pkg.GenerateID()
+	// 与userID不一样，取ID从第二位作为溯源码，即18位，雪花ID的结构如下（转化为10进制共19位）：
+	// +--------------------------------------------------------------------------+
+	// | 1 Bit Unused | 41 Bit Timestamp |  10 Bit NodeID  |   12 Bit Sequence ID |
+	// +--------------------------------------------------------------------------+
+	farmer_traceability_code := pkg.GenerateID()[1:]
 	args := buildArgs(c, farmer_traceability_code)
 	res, err := pkg.ChaincodeInvoke("Uplink", args)
 	if err != nil {
@@ -20,9 +24,10 @@ func Uplink(c *gin.Context) {
 		return
 	}
 	c.JSON(200, gin.H{
-		"code":    200,
-		"message": "uplink success",
-		"txid":    res,
+		"code":              200,
+		"message":           "uplink success",
+		"txid":              res,
+		"traceability_code": args[1],
 	})
 }
 
@@ -31,14 +36,16 @@ func GetFruitInfo(c *gin.Context) {
 	res, err := pkg.ChaincodeQuery("GetFruitInfo", c.PostForm("traceability_code"))
 	if err != nil {
 		c.JSON(200, gin.H{
-			"message": "query failed" + err.Error(),
+			"message": "查询失败：" + err.Error(),
 		})
+		return
 	}
 	c.JSON(200, gin.H{
 		"code":    200,
 		"message": "query success",
 		"data":    res,
 	})
+
 }
 
 // 获取用户的农产品ID列表
@@ -59,7 +66,8 @@ func GetFruitList(c *gin.Context) {
 
 // 获取所有的农产品信息
 func GetAllFruitInfo(c *gin.Context) {
-	res, err := pkg.ChaincodeQuery("GetAllFruitInfo", c.PostForm("arg"))
+	res, err := pkg.ChaincodeQuery("GetAllFruitInfo", "")
+	fmt.Print("res", res)
 	if err != nil {
 		c.JSON(200, gin.H{
 			"message": "query failed" + err.Error(),

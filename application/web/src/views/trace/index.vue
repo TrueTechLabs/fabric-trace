@@ -138,18 +138,18 @@ export default {
   },
   created() {
     getFruitList().then(res => {
-      this.tracedata = JSON.parse(res.data).filter(item => item.traceability_code !== '')
+      this.tracedata = JSON.parse(res.data)
     })
   },
   methods: {
     AllFruitInfo() {
       getAllFruitInfo().then(res => {
-        this.tracedata = JSON.parse(res.data).filter(item => item.traceability_code !== '')
+        this.tracedata = JSON.parse(res.data)
       })
     },
     FruitHistory() {
       getFruitHistory().then(res => {
-        console.log(res)
+        // console.log(res)
       })
     },
     FruitInfo() {
@@ -157,12 +157,12 @@ export default {
       formData.append('traceability_code', this.input)
       getFruitInfo(formData).then(res => {
         if (res.code === 200) {
-          console.log(res)
+          // console.log(res)
           this.tracedata = []
           this.tracedata[0] = JSON.parse(res.data)
           return
         } else {
-          this.$message.error('查询失败')
+          this.$message.error(res.message)
         }
       })
     }

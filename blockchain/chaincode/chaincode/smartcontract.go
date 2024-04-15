@@ -201,6 +201,7 @@ func (s *SmartContract) GetFruitInfo(ctx contractapi.TransactionContextInterface
 	if err != nil {
 		return &Fruit{}, fmt.Errorf("failed to read from world state: %v", err)
 	}
+
 	// 将返回的结果转换为Fruit结构体
 	var fruit Fruit
 	if FruitAsBytes != nil {
@@ -208,9 +209,11 @@ func (s *SmartContract) GetFruitInfo(ctx contractapi.TransactionContextInterface
 		if err != nil {
 			return &Fruit{}, fmt.Errorf("failed to unmarshal fruit: %v", err)
 		}
+		if fruit.Traceability_code != "" {
+			return &fruit, nil
+		}
 	}
-
-	return &fruit, nil
+	return &Fruit{}, fmt.Errorf("the fruit %s does not exist", traceability_code)
 }
 
 // 获取用户的农产品ID列表
@@ -249,7 +252,10 @@ func (s *SmartContract) GetAllFruitInfo(ctx contractapi.TransactionContextInterf
 		if err != nil {
 			return nil, err
 		}
-		fruits = append(fruits, fruit)
+		// 过滤非农产品的信息
+		if fruit.Traceability_code != "" {
+			fruits = append(fruits, fruit)
+		}
 	}
 	return fruits, nil
 }

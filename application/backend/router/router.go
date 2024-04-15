@@ -23,7 +23,11 @@ func SetupRouter() *gin.Engine {
 		MaxAge:           12 * time.Hour,                                      // 预检请求的有效期
 	}))
 	// 设置静态文件目录
-	r.Static("/dist", "./dist")
+	r.Static("/static", "./dist/static")
+	r.LoadHTMLGlob("dist/*.html")
+	r.GET("/", func(c *gin.Context) {
+		c.HTML(200, "index.html", nil)
+	})
 	// 测试GET请求
 	r.GET("/ping", func(c *gin.Context) {
 		c.JSON(200, gin.H{

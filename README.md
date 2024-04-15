@@ -2,7 +2,7 @@
 
 **项目演示站点:** http://realcool.top:9090/
 
-与B站官方合作，本项目代码讲解与二次开发课程已发布，限时特价至4月30日，支持试看: [B站：Fabric V2.5通用溯源项目讲解与二次开发课程](https://www.bilibili.com/cheese/play/ss15923?bsource=link_copy)
+与B站官方合作，本项目代码讲解与二次开发课程已发布，限时特价至4月30日，支持试看: [B站：Fabric V2.5通用溯源项目讲解与二次开发课程](https://www.bilibili.com/cheese/play/ss15923?bsource=link_copy),购买课程将赠送[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)中所有与本项目相关的资料。
 
 Fabric V2.5通用溯源课程活动：[腾讯文档：提交源码仓库地址/PPT/视频获得返现50-300元](https://docs.qq.com/form/page/DQ3ZJUERPVXJCdUtX)
 
@@ -10,20 +10,20 @@ Fabric V2.5通用溯源课程活动：[腾讯文档：提交源码仓库地址/P
 群内可免费阅读此项目的区块链部分、应用后端部分的代码说明文档。项目二次开发以及添加IPFS上传文件功能等文档收录在专栏：[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)。
 
 
-![TrueTechLabs Fabric学习交流QQ群：776873343](https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062054644.jpg)
+![TrueTechLabs Fabric学习交流QQ群：776873343](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/picgoimg202403062054644.jpg)
 #### 一、项目介绍
 基于区块链Hyperledger FabricV2.5的农产品溯源/商品/通用溯源应用模板，部署简单，附压测工具tape、区块链浏览器，文档详细。可以快速使用本系统搭建自己的溯源系统，帮助想法快速落地。采用的技术栈：Fabric V2.5、Gin、Vue.js、Mysql。
 
-![10b244362bd18f0688ae6fd3cb62397](https://github.com/TrueTechLabs/fabric-trace/assets/49872902/60337eb8-1799-435f-b0a5-8ac61761aa28)
+![项目系统架构图](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/picgo319183738-60337eb8-1799-435f-b0a5-8ac61761aa28.png)
 
 
 
 
-![多类型用户注册](https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062029060.png)
+![多类型用户注册](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/picgo202404151236356.jpg)
 
-![农产品上链](https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062031538.png)
-![农产品溯源](https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062032189.png)
-![区块链浏览器可视化](https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062033224.png)
+![农产品上链](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/picgo202404151238978.png)
+![农产品溯源](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/picgo202404151238196.png)
+![区块链浏览器可视化](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/picgo202404151239574.png)
 
 ##### 项目地址：
 **Github**:
@@ -51,9 +51,9 @@ Fabric V2.5通用溯源课程活动：[腾讯文档：提交源码仓库地址/P
 #### 五、搭建步骤
 > 如果部分内容与视频不一致请以本文档为准
 
- 强烈推荐：使用云服务器搭建本系统，虚拟机问题较多。点击此链接购买腾讯云服务器：[https://curl.qcloud.com/Sjy0zKjy](https://curl.qcloud.com/Sjy0zKjy) 点击首单特惠，购买2核4G或以上的服务器，218/年（价格经常会调整），如果后续准备做程序开发可以用新用户优惠买三年的，安装Ubuntu20.04系统。
+ **强烈推荐**：使用云服务器搭建本系统，虚拟机问题较多。点击此链接购买腾讯云服务器：[https://curl.qcloud.com/Sjy0zKjy](https://curl.qcloud.com/Sjy0zKjy) 点击首单特惠，购买2核4G或以上的服务器，199/年（价格经常会调整），如果后续准备做程序开发可以用新用户优惠买三年的，安装Ubuntu20.04系统。
 
-严格按照以下步骤操作：
+**严格按照以下步骤操作，以下步骤已经经过上百人次的验证，如果遇到报错请仔细检查是否遗漏某个步骤：**
 
 1. 安装docker 
 
@@ -127,7 +127,7 @@ Fabric V2.5通用溯源课程活动：[腾讯文档：提交源码仓库地址/P
 4. 启动区块链部分。在fabric-trace/blockchain/network目录下:
 
 	```bash
-	# 仅在首次使用执行：下载Fabric Docker镜像
+	# 仅在首次使用执行：下载Fabric Docker镜像。如果拉取速度过慢请检查是否完成docker换源，或者更换一个其他的镜像源再试。
 	./install-fabric.sh -f 2.5.6 d 
 	```
 
@@ -162,7 +162,7 @@ Fabric V2.5通用溯源课程活动：[腾讯文档：提交源码仓库地址/P
 	npm run dev
 	```
 8. 在腾讯云轻量应用服务器防火墙页面，放行TCP端口`8080,9090,9528`
-![防火墙配置](https://cdn.jsdelivr.net/gh/trueTechLabs/picture@pic/img202403062033585.png)
+![防火墙配置](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/picgo202404151240899.png)
 9. 在浏览器中打开：http://云服务器IP:9528 即可看到前端页面。
 10. 关闭项目步骤
 前后端使用ctrl+c指令即可关闭，区块链部分在network目录下使用./stop.sh脚本关闭，如果不正确关闭可能会影响下一次启动，处理方案是使用命令关闭相关进程。
@@ -194,10 +194,9 @@ Fabric V2.5通用溯源课程活动：[腾讯文档：提交源码仓库地址/P
 2. 修复bug，支持Docker方式部署，简化部署步骤
 #### 七、目前已知存在的问题：
 1. 区块链浏览器有时候会出现无法访问的情况，可以尝试重启浏览器容器。
-2. 获取所有农产品合约和后端程序有bug；上链返回的txid有问题
 
 #### 如果不能按照步骤运行项目
-上述部署步骤已经多人验证并顺利完成，如果您通过上述步骤未能运行项目，请检查环境是否与本项目要求的一致，任何修改或遗漏步骤都可能引起项目不能正常运行，请严格按照视频与文章步骤再次尝试。若还是有问题请在文章评论区留言，附上第一次遇到的报错，如果问题不够明确，我们也很难帮助到您。
+上述部署步骤已经上百人次验证并顺利完成，如果您通过上述步骤未能运行项目，请检查环境是否与本项目要求的一致，任何修改或遗漏步骤都可能引起项目不能正常运行，请严格按照视频与文章步骤再次尝试。若还是有问题请在文章评论区留言，附上第一次遇到的报错，如果问题不够明确，我们也很难帮助到您。
 
 ## Star History
 
