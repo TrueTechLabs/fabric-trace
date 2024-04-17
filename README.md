@@ -188,12 +188,38 @@ Fabric V2.5通用溯源课程活动：[腾讯文档：提交源码仓库地址/P
 ```
 
 #### 六、关闭项目与重新运行步骤
+##### 关闭项目：
+1. 前端（`npm run dev`界面）与后端（`go run main.go`界面：
 
+	使用键盘组合键：`ctrl+c`
+
+2. 区块链部分：
+
+	在`fabric-trace/blockchain/network`目录`./stop.sh`
+
+##### 启动项目：
+1. 在`fabric-trace/blockchain/network`目录
+`./start.sh` 如果遇到报错可以执行以下命令后再试：
+执行清理所有的容器指令：
+`docker rm -f $(docker ps -aq)`
+2. 在`fabric-trace/application/backend`目录下： 执行： `go run main.go`
+3. 在`fabric-trace/application/web`目录下： 执行：
+`npm run dev`
+
+#### 生产模式(后台运行，访问速度更快)
+1. 在`fabric-trace/blockchain/network`目录
+`./start.sh` 如果遇到报错可以执行以下命令后再试：
+执行清理所有的容器指令：
+`docker rm -f $(docker ps -aq)`
+2. 在`fabric-trace/application`目录下： 执行： `./start.sh`
+
+	注意：此方式部署项目会在后台运行，如果后续遇到端口号占用可以尝试关闭占用9090端口号的进程，可以参考：
+	[解决端口占用 bind:address already in use](https://blog.csdn.net/qq_41575489/article/details/137434008?spm=1001.2014.3001.5501)
 
 #### 七、本项目相关的后续计划：
 
 1. 本项目目前不够完美，将持续维护，欢迎给项目点亮Star与B站三连，非常感谢！本项目的区块链部分、前后端的说明文档以及简易的二次开发流程已在[《Fabric项目学习笔记 》](https://blog.csdn.net/qq_41575489/category_12075943.html)专栏发布,欢迎订阅支持！
-2. 修复bug，支持Docker方式部署，简化部署步骤
+2. 支持Docker方式部署，简化部署步骤
 #### 八、目前已知存在的问题：
 1. 区块链浏览器有时候会出现无法访问的情况，可以尝试重启浏览器容器。
 

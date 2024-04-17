@@ -7,4 +7,4 @@ rm -rf dist
 cp -r ../web/dist dist
 go build -o fabrictrace
 # 启动后端
-./fabrictrace
+nohup ./fabrictrace &!

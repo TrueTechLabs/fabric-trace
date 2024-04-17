@@ -45,7 +45,11 @@ chaincode: trace
 # randomString$length
 # randomNumber$min_$max
 args:
-  - RegisterUser
+  - Uplink
+  - 1
+  - randomString8
+  - randomString8
+  - randomString8
   - randomString8
   - randomString8
   - randomString8
