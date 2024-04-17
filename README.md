@@ -127,7 +127,7 @@ Fabric V2.5通用溯源课程活动：[腾讯文档：提交源码仓库地址/P
 4. 启动区块链部分。在fabric-trace/blockchain/network目录下:
 
 	```bash
-	# 仅在首次使用执行：下载Fabric Docker镜像。如果拉取速度过慢请检查是否完成docker换源，或者更换一个其他的镜像源再试。
+	# 仅在首次使用执行：下载Fabric Docker镜像。如果拉取速度过慢或失败请检查是否完成docker换源，或者更换一个其他的镜像源再试。
 	./install-fabric.sh -f 2.5.6 d 
 	```
 
@@ -206,7 +206,7 @@ Fabric V2.5通用溯源课程活动：[腾讯文档：提交源码仓库地址/P
 3. 在`fabric-trace/application/web`目录下： 执行：
 `npm run dev`
 
-#### 生产模式(后台运行，访问速度更快)
+##### 生产模式启动项目(后台运行，访问速度更快)
 1. 在`fabric-trace/blockchain/network`目录
 `./start.sh` 如果遇到报错可以执行以下命令后再试：
 执行清理所有的容器指令：
