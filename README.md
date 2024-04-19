@@ -4,25 +4,20 @@
 
 与B站官方合作，本项目代码讲解与二次开发课程已发布，限时特价至4月30日，支持试看: [B站：Fabric V2.5通用溯源项目讲解与二次开发课程](https://www.bilibili.com/cheese/play/ss15923?bsource=link_copy),购买课程将赠送[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)中所有与本项目相关的资料。
 
-Fabric V2.5通用溯源课程活动：[腾讯文档：提交源码仓库地址/PPT/视频获得返现50-300元](https://docs.qq.com/form/page/DQ3ZJUERPVXJCdUtX)
+Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库地址/PPT/视频获得返现50-300元](https://docs.qq.com/form/page/DQ3ZJUERPVXJCdUtX)
 
 如果需要远程搭建服务或商业合作请填写收集表：[【腾讯文档】本项目搭建服务或商务合作意向收集](https://docs.qq.com/form/page/DQ1hIck5OQkNGQXF2)
 
 #### 如果项目有帮助请给项目点上Star，我们将十分感谢！ 欢迎加入TrueTechLabs Fabric学习交流QQ群：776873343
-群内可免费阅读此项目的区块链部分、应用后端部分的代码说明文档。项目二次开发以及添加IPFS上传文件功能等文档收录在专栏：[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)。
+群内可免费阅读此项目的区块链部分、应用后端部分的代码说明文档。
 
 
 ![TrueTechLabs Fabric学习交流QQ群：776873343](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/picgoimg202403062054644.jpg)
 #### 一、项目介绍
-基于区块链Hyperledger FabricV2.5的农产品溯源/商品/通用溯源应用模板，部署简单，附压测工具tape、区块链浏览器，文档详细。可以快速使用本系统搭建自己的溯源系统，帮助想法快速落地。采用的技术栈：Fabric V2.5、Gin、Vue.js、Mysql。
+基于区块链Hyperledger Fabric V2.5的农产品溯源/商品/通用溯源应用模板，部署简单，附压测工具tape、区块链浏览器，文档详细。可以快速使用本系统搭建自己的溯源系统，帮助想法快速落地。采用的技术栈：Fabric V2.5、Gin、Vue.js、Mysql。
 
 ![项目系统架构图](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/picgo319183738-60337eb8-1799-435f-b0a5-8ac61761aa28.png)
-
-
-
-
 ![多类型用户注册](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/picgo202404151236356.jpg)
-
 ![农产品上链](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/picgo202404151238978.png)
 ![农产品溯源](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/picgo202404151238196.png)
 ![区块链浏览器可视化](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/picgo202404151239574.png)
@@ -37,14 +32,23 @@ Fabric V2.5通用溯源课程活动：[腾讯文档：提交源码仓库地址/P
 ##### 搭建视频地址：
 [https://www.bilibili.com/video/BV1Ar421H7TK](https://www.bilibili.com/video/BV1Ar421H7TK)
 
+##### 附完整一刀未剪的搭建视频:
+演示使用临时服务器，建议使按年付费价格划算一些，具体购买方式参见下方搭建步骤。
+[https://www.bilibili.com/video/BV1mF4m1P7Go](https://www.bilibili.com/video/BV1mF4m1P7Go)。
+
 ##### 项目文档地址(部分内容需要订阅专栏）：
 [https://blog.csdn.net/qq_41575489/category_12075943.html](https://blog.csdn.net/qq_41575489/category_12075943.html)
 
+##### 项目代码讲解与修改前端课程：
+[B站：Fabric V2.5通用溯源项目讲解与二次开发课程](https://www.bilibili.com/cheese/play/ss15923?bsource=link_copy)
+
+
 #### 二、版权声明
-本项目基于Apache License 2.0开源协议，在个人的科研、学习范围内可以自由使用，请附上项目链接。如有商业需求或合作需求，需要联系作者购买授权。
+本项目基于Apache License 2.0开源协议，在个人的科研、学习范围内可以自由使用，请附上项目链接。如有商业需求或合作需求，请填写收集表：[【腾讯文档】本项目搭建服务或商务合作意向收集](https://docs.qq.com/form/page/DQ1hIck5OQkNGQXF2)
+。
 
 #### 三、项目特点
-本项目采用Hyperledger Fabric V2.5，属于目前最新的Fabric版本，具有更好的性能和稳定性，调用链码使用Fabric-gateway模式，是当前版本的推荐方式。内置了tape压测工具，可以方便的对区块链网络进行压测；内置了区块链浏览器，可以方便地查询交易信息。
+本项目采用Hyperledger Fabric V2.5，属于目前最新的Fabric版本，具有更好的性能和稳定性，调用链码使用fabric-gateway模式，是当前版本的推荐方式。内置了tape压测工具，可以方便的对区块链网络进行压测；内置了区块链浏览器，可以方便地查询交易信息。
 项目结构清晰，代码注释详细，方便二次开发。结合了mysql实现账户注册登录功能，更符合真实业务场景。
 
 #### 四、项目背景
@@ -53,7 +57,7 @@ Fabric V2.5通用溯源课程活动：[腾讯文档：提交源码仓库地址/P
 #### 五、搭建步骤
 > 如果部分内容与视频不一致请以本文档为准
 
- **强烈推荐**：使用云服务器搭建本系统，虚拟机问题较多。点击此链接购买腾讯云服务器：[https://curl.qcloud.com/Sjy0zKjy](https://curl.qcloud.com/Sjy0zKjy) 点击首单特惠，购买2核4G或以上的服务器，199/年（价格经常会调整），如果后续准备做程序开发可以用新用户优惠买三年的，安装Ubuntu20.04系统。
+ 强烈推荐按照步骤使用云服务器搭建本系统，虚拟机的问题较多。点击此链接直达新人活动页面：[https://curl.qcloud.com/Sjy0zKjy](https://curl.qcloud.com/Sjy0zKjy) 点击首单特惠，**购买2核4G或以上的服务器**，199/年（价格经常会调整），如果后续准备做程序开发可以用新用户优惠买三年的，安装Ubuntu20.04系统。
 
 **严格按照以下步骤操作，以下步骤已经经过上百人次的验证，如果遇到报错请仔细检查是否遗漏某个步骤：**
 
@@ -167,9 +171,7 @@ Fabric V2.5通用溯源课程活动：[腾讯文档：提交源码仓库地址/P
 8. 在腾讯云轻量应用服务器防火墙页面，放行TCP端口`8080,9090,9528`
 ![防火墙配置](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/picgo202404151240899.png)
 9. 在浏览器中打开：http://云服务器IP:9528 即可看到前端页面。
-10. 关闭项目步骤
-前后端使用ctrl+c指令即可关闭，区块链部分在network目录下使用./stop.sh脚本关闭，如果不正确关闭可能会影响下一次启动，处理方案是使用命令关闭相关进程。
-11. 使用tape对项目进行压力测试
+10. 使用tape对项目进行压力测试
 根据blockchain/chaincode/chaincode/smartcontract.go中的合约函数的签名，编写压测的参数，需要修改的内容是tape目录下的yaml文件中的args。args第一个参数是函数名，后面的参数是函数的参数。例如：
 	```yaml
 	args:
@@ -223,15 +225,15 @@ Fabric V2.5通用溯源课程活动：[腾讯文档：提交源码仓库地址/P
 
 1. 本项目目前不够完美，将持续维护，欢迎给项目点亮Star与B站三连，非常感谢！本项目的区块链部分、前后端的说明文档以及简易的二次开发流程已在[《Fabric项目学习笔记 》](https://blog.csdn.net/qq_41575489/category_12075943.html)专栏发布,欢迎订阅支持！
 2. 支持Docker方式部署，简化部署步骤
+3. 改善农产品信息上链过程，需要按照角色顺序上链
+
 #### 八、目前已知存在的问题：
 1. 区块链浏览器有时候会出现无法访问的情况，可以尝试重启浏览器容器。
 
 #### 如果不能按照步骤运行项目
-上述部署步骤已经上百人次验证并顺利完成，如果您通过上述步骤未能运行项目，请检查环境是否与本项目要求的一致，任何修改或遗漏步骤都可能引起项目不能正常运行，请严格按照视频与文章步骤再次尝试。若还是有问题请在[B站项目搭建视频](https://www.bilibili.com/video/BV1Ar421H7TK)评论区查看其他人的留言是否有相同的问题，如果还是没有解决请在视频下评论问题并附上第一个遇到的报错，如果问题不够明确，我们也很难帮助到您。[附完整一刀未剪的搭建视频](https://www.bilibili.com/video/BV1mF4m1P7Go)。
+上述部署步骤已经上百人次验证并顺利完成，如果您通过上述步骤未能运行项目，请检查环境是否与本项目要求的一致，任何修改或遗漏步骤都可能引起项目不能正常运行，请严格按照视频与文章步骤再次尝试。若还是有问题请在[B站项目搭建视频](https://www.bilibili.com/video/BV1Ar421H7TK)评论区查看其他人的留言是否有相同的问题，如果还是没有解决请在视频下评论问题并附上第一个遇到的报错，如果问题不够明确，我们也很难帮助到您。
 
-
-[本项目常见问题与解决方案列表](https://blog.csdn.net/qq_41575489/article/details/137886728)
-
+[常见问题与解决方案列表](https://blog.csdn.net/qq_41575489/article/details/137886728)
 
 
 ## Star History
