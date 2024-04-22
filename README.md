@@ -2,9 +2,10 @@
 
 **项目演示站点:** http://realcool.top:9090/
 
-与B站官方合作，本项目代码讲解与二次开发课程已发布，限时特价至4月30日，支持试看: [B站：Fabric V2.5通用溯源项目讲解与二次开发课程](https://www.bilibili.com/cheese/play/ss15923?bsource=link_copy),购买课程将赠送[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)中所有与本项目相关的资料。
+与B站官方合作，本项目代码讲解与二次开发课程已发布，限时特价至4月30日，支持试看: [B站：Fabric V2.5通用溯源项目讲解与二次开发课程](https://www.bilibili.com/cheese/play/ss15923?bsource=link_copy),购买课程将赠送[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)中所有与本项目相关的资料。购买课程与订阅专栏均配套社群，方便交流与答疑。
 
 Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库地址/PPT/视频获得返现50-300元](https://docs.qq.com/form/page/DQ3ZJUERPVXJCdUtX)
+
 
 如果需要远程搭建服务或商业合作请填写收集表：[【腾讯文档】本项目搭建服务或商务合作意向收集](https://docs.qq.com/form/page/DQ1hIck5OQkNGQXF2)
 
@@ -45,7 +46,7 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 
 #### 二、版权声明
 本项目基于Apache License 2.0开源协议，在个人的科研、学习范围内可以自由使用，请附上项目链接。如有商业需求或合作需求，请填写收集表：[【腾讯文档】本项目搭建服务或商务合作意向收集](https://docs.qq.com/form/page/DQ1hIck5OQkNGQXF2)
-。
+。如果您不同意本声明请不要使用本项目。
 
 #### 三、项目特点
 本项目采用Hyperledger Fabric V2.5，属于目前最新的Fabric版本，具有更好的性能和稳定性，调用链码使用fabric-gateway模式，是当前版本的推荐方式。内置了tape压测工具，可以方便的对区块链网络进行压测；内置了区块链浏览器，可以方便地查询交易信息。
@@ -231,9 +232,9 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 1. 区块链浏览器有时候会出现无法访问的情况，可以尝试重启浏览器容器。
 
 #### 如果不能按照步骤运行项目
-上述部署步骤已经上百人次验证并顺利完成，如果您通过上述步骤未能运行项目，请检查环境是否与本项目要求的一致，任何修改或遗漏步骤都可能引起项目不能正常运行，请严格按照视频与文章步骤再次尝试。若还是有问题请在[B站项目搭建视频](https://www.bilibili.com/video/BV1Ar421H7TK)评论区查看其他人的留言是否有相同的问题，如果还是没有解决请在视频下评论问题并附上第一个遇到的报错，如果问题不够明确，我们也很难帮助到您。
+上述部署步骤已经上百人次验证并顺利完成，如果您通过上述步骤未能运行项目，请检查环境是否与本项目要求的一致，任何修改或遗漏步骤都可能引起项目不能正常运行，请严格按照视频与文章步骤再次尝试，[常见问题与解决方案列表参考](https://blog.csdn.net/qq_41575489/article/details/137886728)。若还是有问题请在[B站项目搭建视频](https://www.bilibili.com/video/BV1Ar421H7TK)评论区查看其他人的留言是否有相同的问题，如果还是没有解决请在视频下评论问题并附上第一个遇到的报错，如果问题不够明确，我们也很难帮助到您。购买[B站：Fabric V2.5通用溯源项目讲解与二次开发课程](https://www.bilibili.com/cheese/play/ss15923?bsource=link_copy)或订阅[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)可以加入配套社群，方便本项目交流与答疑。
 
-[常见问题与解决方案列表](https://blog.csdn.net/qq_41575489/article/details/137886728)
+
 
 
 ## Star History
