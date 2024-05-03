@@ -9,6 +9,10 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 
 如果需要远程搭建服务或商业合作请填写收集表：[【腾讯文档】本项目搭建服务或商务合作意向收集](https://docs.qq.com/form/page/DQ1hIck5OQkNGQXF2)
 
+【远程搭建】淘宝搜索店铺【TrueTechLabs技术支持】或使用淘宝APP扫码直达商品页面：
+![淘宝APP扫码直达商品](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/202405032230856.png)
+
+
 #### 如果项目有帮助请给项目点上Star，我们将十分感谢！ 欢迎加入TrueTechLabs Fabric学习交流QQ群：776873343
 群内可免费阅读此项目的区块链部分、应用后端部分的代码说明文档。
 
