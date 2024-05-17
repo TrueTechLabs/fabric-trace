@@ -16,6 +16,16 @@ func Uplink(c *gin.Context) {
 	// +--------------------------------------------------------------------------+
 	farmer_traceability_code := pkg.GenerateID()[1:]
 	args := buildArgs(c, farmer_traceability_code)
+	if args == nil {
+		return
+	}
+	// 对用户上传的溯源码进行校验
+	if len(args[0]) != 18 {
+		c.JSON(200, gin.H{
+			"message": "请检查溯源码是否正确！",
+		})
+		return
+	}
 	res, err := pkg.ChaincodeInvoke("Uplink", args)
 	if err != nil {
 		c.JSON(200, gin.H{
@@ -106,7 +116,16 @@ func buildArgs(c *gin.Context, farmer_traceability_code string) []string {
 	if userType == "种植户" {
 		args = append(args, farmer_traceability_code)
 	} else {
-		args = append(args, c.PostForm("traceability_code"))
+		// 检查溯源码是否正确
+		res, err := pkg.ChaincodeQuery("GetFruitInfo", c.PostForm("traceability_code"))
+		if res == "" || err != nil {
+			c.JSON(200, gin.H{
+				"message": "请检查溯源码是否正确！",
+			})
+			return nil
+		} else {
+			args = append(args, c.PostForm("traceability_code"))
+		}
 	}
 	args = append(args, c.PostForm("arg1"))
 	args = append(args, c.PostForm("arg2"))

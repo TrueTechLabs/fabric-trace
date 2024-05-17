@@ -2,7 +2,7 @@
 
 **项目演示站点:** http://realcool.top:9090/
 
-与B站官方合作，本项目代码讲解与二次开发课程已发布，限时特价至4月30日，支持试看: [B站：Fabric V2.5通用溯源项目讲解与二次开发课程](https://www.bilibili.com/cheese/play/ss15923?bsource=link_copy),购买课程将赠送[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)中所有与本项目相关的资料。购买课程与订阅专栏均配套社群，方便交流与答疑。
+与B站官方合作，本项目代码讲解与二次开发课程已发布，限时特价219元，支持试看: [B站：Fabric V2.5通用溯源项目讲解与二次开发课程](https://www.bilibili.com/cheese/play/ss15923?bsource=link_copy),购买课程将赠送[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)中所有与本项目相关的资料。购买课程与订阅专栏均配套社群，方便交流与答疑。
 
 Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库地址/PPT/视频获得返现50-300元](https://docs.qq.com/form/page/DQ3ZJUERPVXJCdUtX)
 
@@ -142,7 +142,6 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 	# 仅在首次使用执行：下载Fabric Docker镜像。如果拉取速度过慢或失败请检查是否完成docker换源，或者更换一个其他的镜像源再试。
 	./install-fabric.sh -f 2.5.6 d 
 	```
-
 	```bash
 	# 启动区块链网络
 	./start.sh
@@ -159,7 +158,12 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 6. 修改后端IP，将以下文件中的IP：`119.45.247.29`，换成自己云服务的IP。
 	```bash
 	fabric-trace/application/web/.env.development
+	fabric-trace/application/web/.env.development
 	fabric-trace/application/web/src/router/index.js
+	```
+	或使用application/replaceip.sh脚本根据指引修改IP，在fabric-trace/application目录下
+	```bash
+	./replaceip.sh
 	```
 
 7. 新开一个窗口，启动前端 在fabric-trace/application/web目录下： 执行： 
@@ -205,9 +209,9 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 
 2. 区块链部分：
 
-	在`fabric-trace/blockchain/network`目录`./stop.sh`
+	在`fabric-trace/blockchain/network`目录`./stop.sh`，此步骤会清理所有的区块链、Mysql中的数据。
 
-##### 启动项目：
+##### 开发模式启动项目：
 1. 在`fabric-trace/blockchain/network`目录
 `./start.sh` 如果遇到报错可以执行以下命令后再试：
 执行清理所有的容器指令：
@@ -215,25 +219,28 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 2. 在`fabric-trace/application/backend`目录下： 执行： `go run main.go`
 3. 在`fabric-trace/application/web`目录下： 执行：
 `npm run dev`
+4. 在http://服务器IP:9528打开
 
-##### 生产模式启动项目(后台运行，访问速度更快)
+##### 生产环境部署项目(后台运行，访问速度更快)
 1. 在`fabric-trace/blockchain/network`目录
 `./start.sh` 如果遇到报错可以执行以下命令后再试：
 执行清理所有的容器指令：
 `docker rm -f $(docker ps -aq)`
 2. 在`fabric-trace/application`目录下： 执行： `./start.sh`
+3. 在http://服务器IP:9090打开
 
 	注意：此方式部署项目会在后台运行，如果后续遇到端口号占用可以尝试关闭占用9090端口号的进程，可以参考：
 	[解决端口占用 bind:address already in use](https://blog.csdn.net/qq_41575489/article/details/137434008?spm=1001.2014.3001.5501)
 
 #### 七、本项目相关的后续计划：
 
-1. 本项目目前不够完美，将持续维护，欢迎给项目点亮Star与B站三连，非常感谢！本项目的区块链部分、前后端的说明文档以及简易的二次开发流程已在[《Fabric项目学习笔记 》](https://blog.csdn.net/qq_41575489/category_12075943.html)专栏发布,欢迎订阅支持！
+1. 本项目目前不够完美，将持续维护，欢迎给项目点亮Star与B站三连，非常感谢！与B站官方合作，本项目代码讲解与二次开发课程已发布，限时特价219元，支持试看: [B站：Fabric V2.5通用溯源项目讲解与二次开发课程](https://www.bilibili.com/cheese/play/ss15923?bsource=link_copy),购买课程将赠送[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)中所有与本项目相关的资料。购买课程与订阅专栏均配套社群，方便交流与答疑。
 2. 支持Docker方式部署，简化部署步骤
 3. 改善农产品信息上链过程，需要按照角色顺序上链
 
-#### 八、目前已知存在的问题：
+#### 八、特别提示：
 1. 区块链浏览器有时候会出现无法访问的情况，可以尝试重启浏览器容器。
+2. 为了减少用户运行本项目时的难度，区块链目录的start.sh脚本在启动区块链时同时会清理掉所有的历史数据！如果重启机器后不希望清理原来的数据启动区块链，可以使用指令：`docker start $(docker ps -aq)`启动所有节点
 
 #### 如果不能按照步骤运行项目
 上述部署步骤已经上百人次验证并顺利完成，如果您通过上述步骤未能运行项目，请检查环境是否与本项目要求的一致，任何修改或遗漏步骤都可能引起项目不能正常运行，请严格按照视频与文章步骤再次尝试，[常见问题与解决方案列表参考](https://blog.csdn.net/qq_41575489/article/details/137886728)。若还是有问题请在[B站项目搭建视频](https://www.bilibili.com/video/BV1Ar421H7TK)评论区查看其他人的留言是否有相同的问题，如果还是没有解决请在视频下评论问题并附上第一个遇到的报错，如果问题不够明确，我们也很难帮助到您。购买[B站：Fabric V2.5通用溯源项目讲解与二次开发课程](https://www.bilibili.com/cheese/play/ss15923?bsource=link_copy)或订阅[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)可以加入配套社群，方便本项目交流与答疑。
