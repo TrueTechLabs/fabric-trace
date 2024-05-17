@@ -157,7 +157,7 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 
 6. 修改后端IP，将以下文件中的IP：`119.45.247.29`，换成自己云服务的IP。
 	```bash
-	fabric-trace/application/web/.env.development
+	fabric-trace/application/web/.env.production
 	fabric-trace/application/web/.env.development
 	fabric-trace/application/web/src/router/index.js
 	```
