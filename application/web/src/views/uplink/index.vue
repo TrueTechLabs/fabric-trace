@@ -194,6 +194,7 @@ export default {
           })
         }
       }).catch(err => {
+        loading.close()
         console.log(err)
       })
     }

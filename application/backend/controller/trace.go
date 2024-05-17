@@ -19,13 +19,6 @@ func Uplink(c *gin.Context) {
 	if args == nil {
 		return
 	}
-	// 对用户上传的溯源码进行校验
-	if len(args[1]) != 18 {
-		c.JSON(200, gin.H{
-			"message": "请检查溯源码是否正确！",
-		})
-		return
-	}
 	res, err := pkg.ChaincodeInvoke("Uplink", args)
 	if err != nil {
 		c.JSON(200, gin.H{
@@ -118,9 +111,9 @@ func buildArgs(c *gin.Context, farmer_traceability_code string) []string {
 	} else {
 		// 检查溯源码是否正确
 		res, err := pkg.ChaincodeQuery("GetFruitInfo", c.PostForm("traceability_code"))
-		if res == "" || err != nil {
+		if res == "" || err != nil || len(c.PostForm("traceability_code")) != 18 {
 			c.JSON(200, gin.H{
-				"message": "请检查溯源码是否正确！",
+				"message": "请检查溯源码是否正确!!",
 			})
 			return nil
 		} else {
