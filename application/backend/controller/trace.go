@@ -20,7 +20,7 @@ func Uplink(c *gin.Context) {
 		return
 	}
 	// 对用户上传的溯源码进行校验
-	if len(args[0]) != 18 {
+	if len(args[1]) != 18 {
 		c.JSON(200, gin.H{
 			"message": "请检查溯源码是否正确！",
 		})
