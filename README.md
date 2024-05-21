@@ -7,10 +7,7 @@
 Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库地址/PPT/视频获得返现50-300元](https://docs.qq.com/form/page/DQ3ZJUERPVXJCdUtX)
 
 
-如果需要远程搭建服务或商业合作请填写收集表：[【腾讯文档】本项目搭建服务或商务合作意向收集](https://docs.qq.com/form/page/DQ1hIck5OQkNGQXF2)
-
-【远程搭建】淘宝搜索店铺【TrueTechLabs技术支持】或使用淘宝APP扫码直达商品页面：
-![淘宝APP扫码直达商品](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/202405032230856.png)
+如果需要远程搭建服务或商业合作请填写收集表，对于公益项目可以提供免费技术支持：[【腾讯文档】本项目搭建服务或商务合作意向收集](https://docs.qq.com/form/page/DQ1hIck5OQkNGQXF2)
 
 
 #### 如果项目有帮助请给项目点上Star，我们将十分感谢！ 欢迎加入TrueTechLabs Fabric学习交流QQ群：776873343
@@ -242,9 +239,34 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 1. 区块链浏览器有时候会出现无法访问的情况，可以尝试重启浏览器容器。
 2. 为了减少用户运行本项目时的难度，区块链目录的start.sh脚本在启动区块链时同时会清理掉所有的历史数据！如果重启机器后不希望清理原来的数据启动区块链，可以使用指令：`docker start $(docker ps -aq)`启动所有节点
 
-#### 如果不能按照步骤运行项目
-上述部署步骤已经上百人次验证并顺利完成，如果您通过上述步骤未能运行项目，请检查环境是否与本项目要求的一致，任何修改或遗漏步骤都可能引起项目不能正常运行，请严格按照视频与文章步骤再次尝试，[常见问题与解决方案列表参考](https://blog.csdn.net/qq_41575489/article/details/137886728)。若还是有问题请在[B站项目搭建视频](https://www.bilibili.com/video/BV1Ar421H7TK)评论区查看其他人的留言是否有相同的问题，如果还是没有解决请在视频下评论问题并附上第一个遇到的报错，如果问题不够明确，我们也很难帮助到您。购买[B站：Fabric V2.5通用溯源项目讲解与二次开发课程](https://www.bilibili.com/cheese/play/ss15923?bsource=link_copy)或订阅[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)可以加入配套社群，方便本项目交流与答疑。
+#### 常见问题总结（检查第一个报错的位置）
+上述部署步骤已经上百人次验证并顺利完成，如果您通过上述步骤未能运行项目，请检查环境是否与本项目要求的一致，任何修改或遗漏步骤都可能引起项目不能正常运行，请严格按照视频与文章步骤再次尝试或查看以下常见问题列表。若还是有问题请在[B站项目搭建视频](https://www.bilibili.com/video/BV1Ar421H7TK)评论区查看其他人的留言是否有相同的问题，如果还是没有解决请在视频下评论问题并附上第一个遇到的报错，如果问题不够明确，我们也很难帮助到您。购买[B站：Fabric V2.5通用溯源项目讲解与二次开发课程](https://www.bilibili.com/cheese/play/ss15923?bsource=link_copy)或订阅[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)可以加入配套社群，方便本项目交流与答疑。
 
+1. 需要给机器安装mysql吗？
+按照项目搭建过程即可部署好mysql，mysql容器与区块链节点一起启动，因此不需要单独安装mysql。
+2. fabric镜像拉取过慢或提示timeout
+一般是你的网络原因，或者是镜像源网络原因，可以尝试docker换源再试。
+3. 安装链码时报错：exec: "go": executable file not found in $PATH
+可能是go环境变量未安装好；可能使用了sudo，不要与安装步骤不一致
+4. jq:未找到命令
+漏掉安装步骤中的安装jq，使用sudo apt install jq即可解决
+5. docker权限报错：docker: permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock:
+重新执行安装步骤中的：
+
+	```bash
+	#添加当前用户到docker用户组 
+	sudo usermod -aG docker $USER 
+	newgrp docker 
+	```
+
+6. 提示mysql或3337端口错误
+重启区块链网络部分
+7. 前端提示timeout
+检查是否修改好IP或检查防火墙是否开通相关端口
+8. 前端登录页面提示404
+检查是否修改好IP，除了IP不要修改任何字符。
+9. npm run dev 不能启动前端
+检查npm install是否完整把所有包装上了 
 
 
 
