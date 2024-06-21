@@ -41,6 +41,7 @@ func (s *SmartContract) Uplink(ctx contractapi.TransactionContextInterface, user
 	if err != nil {
 		return "", fmt.Errorf("failed to get user type: %v", err)
 	}
+
 	// 通过溯源码获取农产品的上链信息
 	FruitAsBytes, err := ctx.GetStub().GetState(traceability_code)
 	if err != nil {
@@ -115,7 +116,7 @@ func (s *SmartContract) Uplink(ctx contractapi.TransactionContextInterface, user
 	//将农产品的信息转换为json格式
 	fruitAsBytes, err := json.Marshal(fruit)
 	if err != nil {
-		return "", fmt.Errorf("2failed to marshal fruit: %v", err)
+		return "", fmt.Errorf("failed to marshal fruit: %v", err)
 	}
 	//将农产品的信息存入区块链
 	err = ctx.GetStub().PutState(traceability_code, fruitAsBytes)

@@ -4,15 +4,15 @@
         //userID string, traceability_code string, arg1 string, arg2 string, arg3 string, arg4 string, arg5 string
         "invoke": "Uplink",
  
-        "args": ["2","tracecode3","3apple","Shanxi","2018-01-01","2018-10-01","Tom"]
+        "args": ["6","tracecode3","3apple","Shanxi","2018-01-01","2018-10-01","Tom"]
     },
     {
         "invoke":"RegisterUser",
-        "args" :["2","farmer","3"]
+        "args" :["6","farmer","3"]
     },
     {
         "invoke":"GetUserType",
-        "args" :["1"]
+        "args" :["2"]
     },
     {
         "invoke":"GetUserInfo",

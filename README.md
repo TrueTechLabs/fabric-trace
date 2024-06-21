@@ -72,12 +72,19 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 	#添加当前用户到docker用户组 
 	sudo usermod -aG docker $USER 
 	newgrp docker 
-	#配置docker镜像加速
 	sudo mkdir -p /etc/docker
-
+	#配置docker镜像加速，近期非常不稳定，如果以下源不好用可以再找下其他源
+	#下边的源2024.06.21测试可用
 	sudo tee /etc/docker/daemon.json <<-'EOF'
 	{
-	  "registry-mirrors": ["https://punulfd2.mirror.aliyuncs.com"]
+		"registry-mirrors": [
+			"https://hub.uuuadc.top",
+			"https://docker.anyhub.us.kg",
+			"https://dockerhub.jobcher.com",
+			"https://dockerhub.icu",
+			"https://docker.ckyl.me",
+			"https://docker.awsl9527.cn"
+		]
 	}
 	EOF
 
