@@ -4,10 +4,12 @@
 
 与B站官方合作，本项目代码讲解与二次开发课程已发布，限时特价219元，支持试看: [B站：Fabric V2.5通用溯源项目讲解与二次开发课程](https://www.bilibili.com/cheese/play/ss15923?bsource=link_copy),购买课程将赠送[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)中所有与本项目相关的资料。购买课程与订阅专栏均配套社群，方便交流与答疑。
 
-Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库地址/PPT/视频获得返现50-300元](https://docs.qq.com/form/page/DQ3ZJUERPVXJCdUtX)
+Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库地址/PPT/视频获得返现50-219元](https://docs.qq.com/form/page/DQ3ZJUERPVXJCdUtX)
 
-
-如果需要远程搭建服务或商业合作请填写收集表，对于公益项目可以提供免费技术支持：[【腾讯文档】本项目搭建服务或商务合作意向收集](https://docs.qq.com/form/page/DQ1hIck5OQkNGQXF2)
+优秀案例【全额返现219元】：
+1.  [木白/基于区块链的电子证照存储与溯源系统](https://gitee.com/surgar2022/fabric-eCert-trace-ipfs)
+   
+如果需要远程搭建服务或商业合作请填写收集表，对于政府等机构公益项目可以提供免费技术支持：[【腾讯文档】本项目搭建服务或商务合作意向收集](https://docs.qq.com/form/page/DQ1hIck5OQkNGQXF2)
 
 
 #### 如果项目有帮助请给项目点上Star，我们将十分感谢！ 欢迎加入TrueTechLabs Fabric学习交流QQ群：776873343
@@ -75,7 +77,7 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 	newgrp docker 
 	sudo mkdir -p /etc/docker
 	#配置docker镜像加速，近期非常不稳定，如果以下源不好用可以再找下其他源
-	#下边的源2024.06.21测试可用
+	#下边的源2024.8.8日测试可用
 	sudo tee /etc/docker/daemon.json <<-'EOF'
 	{
 		"registry-mirrors": [
@@ -248,7 +250,7 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 2. 为了减少用户运行本项目时的难度，区块链目录的start.sh脚本在启动区块链时同时会清理掉所有的历史数据！如果重启机器后不希望清理原来的数据启动区块链，可以使用指令：`docker start $(docker ps -aq)`启动所有节点
 
 #### 常见问题总结（检查第一个报错的位置）
-上述部署步骤已经上百人次验证并顺利完成，如果您通过上述步骤未能运行项目，请检查环境是否与本项目要求的一致，任何修改或遗漏步骤都可能引起项目不能正常运行，请严格按照视频与文章步骤再次尝试或查看以下常见问题列表。若还是有问题请在[B站项目搭建视频](https://www.bilibili.com/video/BV1Ar421H7TK)评论区查看其他人的留言是否有相同的问题，如果还是没有解决请在视频下评论问题并附上第一个遇到的报错，如果问题不够明确，我们也很难帮助到您。购买[B站：Fabric V2.5通用溯源项目讲解与二次开发课程](https://www.bilibili.com/cheese/play/ss15923?bsource=link_copy)或订阅[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)可以加入配套社群，方便本项目交流与答疑。
+上述部署步骤已经上百人次验证并顺利完成，如果您通过上述步骤未能运行项目，请检查环境是否与本项目要求的一致，任何修改或遗漏步骤都可能引起项目不能正常运行，请严格按照视频与文章步骤再次尝试或查看以下常见问题列表。若还是有问题请在[B站项目搭建视频](https://www.bilibili.com/video/BV1Ar421H7TK)评论区查看其他人的留言是否有相同的问题，如果还是没有解决请在视频下评论问题并附上与【安装步骤不一致的地方】或【第一个遇到的报错】，如果问题不够明确，我们也很难帮助到您。购买[B站：Fabric V2.5通用溯源项目讲解与二次开发课程](https://www.bilibili.com/cheese/play/ss15923?bsource=link_copy)或订阅[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)可以加入配套社群，方便本项目交流与答疑。
 
 1. 需要给机器安装mysql吗？
 按照项目搭建过程即可部署好mysql，mysql容器与区块链节点一起启动，因此不需要单独安装mysql。
