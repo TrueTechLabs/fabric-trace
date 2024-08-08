@@ -6,8 +6,8 @@
 
 Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库地址/PPT/视频获得返现50-219元](https://docs.qq.com/form/page/DQ3ZJUERPVXJCdUtX)
 
-优秀案例【全额返现219元】：
-1.  [木白/基于区块链的电子证照存储与溯源系统](https://gitee.com/surgar2022/fabric-eCert-trace-ipfs)
+二次开发优秀案例：
+1.  [木白/基于区块链的电子证照存储与溯源系统](https://gitee.com/surgar2022/fabric-eCert-trace-ipfs) 【全额返现219元】
    
 如果需要远程搭建服务或商业合作请填写收集表，对于政府等机构公益项目可以提供免费技术支持：[【腾讯文档】本项目搭建服务或商务合作意向收集](https://docs.qq.com/form/page/DQ1hIck5OQkNGQXF2)
 
