@@ -124,6 +124,7 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 	export NVM_DIR="$HOME/.nvm"
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+	export NVM_NODEJS_ORG_MIRROR=http://npmmirror.com/mirrors/node/ #更换阿里云nvm node源
 	# 更新环境变量
 	source  ~/.bashrc
 	# 安装node16
@@ -271,8 +272,8 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 
 6. 提示mysql或3337端口错误
 重启区块链网络部分
-7. 前端提示timeout
-检查是否修改好IP或检查防火墙是否开通相关端口
+7. 前端提示network error、timeout
+检查是否修改好IP；检查防火墙是否开通相关端口；检查后端是否允许；重启前端服务器
 8. 前端登录页面提示404
 检查是否修改好IP，除了IP不要修改任何字符。
 9. npm run dev 不能启动前端
