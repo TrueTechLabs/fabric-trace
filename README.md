@@ -77,17 +77,14 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 	newgrp docker 
 	sudo mkdir -p /etc/docker
 	#配置docker镜像加速，近期非常不稳定，如果以下源不好用可以再找下其他源
-	#下边的源2024.8.8日测试可用
+	#下边的源2024.8.29日测试可用
 	sudo tee /etc/docker/daemon.json <<-'EOF'
 	{
-		"registry-mirrors": [
-			"https://hub.uuuadc.top",
-			"https://docker.anyhub.us.kg",
-			"https://dockerhub.jobcher.com",
-			"https://dockerhub.icu",
-			"https://docker.ckyl.me",
-			"https://docker.awsl9527.cn"
-		]
+	    "registry-mirrors": [
+	        "https://docker.m.daocloud.io",
+	        "https://docker.1panel.live",
+	        "https://hub.rat.dev"
+	    ]
 	}
 	EOF
 
@@ -125,6 +122,7 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 	export NVM_NODEJS_ORG_MIRROR=http://npmmirror.com/mirrors/node/ #更换阿里云nvm node源
+ 
 	# 更新环境变量
 	source  ~/.bashrc
 	# 安装node16
@@ -163,7 +161,7 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 
 5. 启动后端 在fabric-trace/application/backend目录下： 执行： `go run main.go`
 
-6. 修改后端IP，将以下文件中的IP：`119.45.247.29`，换成自己云服务的IP。
+6. 修改后端IP，将以下文件中的IP：`119.45.247.29`，换成自己云服务器的IP。
 	```bash
 	fabric-trace/application/web/.env.production
 	fabric-trace/application/web/.env.development
