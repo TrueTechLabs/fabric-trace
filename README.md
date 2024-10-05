@@ -1,6 +1,6 @@
 
 
-**项目演示站点:** http://realcool.top:9090/
+**项目演示站点:** http://t.realcool.top/
 
 与B站官方合作，本项目代码讲解与二次开发课程已发布，限时特价219元，支持试看: [B站：Fabric V2.5通用溯源项目讲解与二次开发课程](https://www.bilibili.com/cheese/play/ss15923?bsource=link_copy),购买课程将赠送[《Fabric项目学习笔记》](https://blog.csdn.net/qq_41575489/article/details/128637560)中所有与本项目相关的资料。购买课程与订阅专栏均配套社群，方便交流与答疑。
 
