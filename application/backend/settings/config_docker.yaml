@@ -1,0 +1,24 @@
+app:
+  name: "fabricTraceServer"
+  mode: "dev"
+  port: 9090
+  salt: "testsalt"
+jwt:
+  secret: "testsecret"
+  issuer: "fabricTraceServer"
+mysql:
+  host: "172.17.0.1"
+  port: 3337
+  user: "root"  
+  password : "fabrictrace"
+  charset: "utf8mb4"
+  db : "fabrictrace"
+  
+# mysql:
+#   host: "127.0.0.1"
+#   port: 3337
+#   user: "root"  
+#   password : "fabrictrace"
+#   charset: "utf8mb4"
+#   db : "fabrictrace"
+  
