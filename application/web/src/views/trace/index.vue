@@ -45,7 +45,7 @@
             <el-form-item label="工厂名称与厂址：">
               <span>{{ props.row.factory_input.fac_factoryName }}</span>
             </el-form-item>
-            <el-form-item label="联系电话：">
+            <el-form-item label="工厂电话：">
               <span>{{ props.row.factory_input.fac_contactNumber }}</span>
             </el-form-item>
             <el-form-item label="区块链交易ID：">

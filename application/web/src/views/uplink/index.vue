@@ -40,7 +40,7 @@
           <el-form-item label="工厂名称与厂址:" style="width: 300px" label-width="120px">
             <el-input v-model="tracedata.Factory_input.Fac_factoryName" />
           </el-form-item>
-          <el-form-item label="联系电话:" style="width: 300px" label-width="120px">
+          <el-form-item label="工厂电话:" style="width: 300px" label-width="120px">
             <el-input v-model="tracedata.Factory_input.Fac_contactNumber" />
           </el-form-item>
         </div>
