@@ -1,6 +1,6 @@
 #!/bin/bash
 # 关闭旧app容器
-./stop_docker.sh >> /dev/null
+./stop_docker.sh > /dev/null 2>&1
 # 复制区块链密钥证书材料
 rm -rf backend/blockchain/network/organizations && mkdir -p backend/blockchain/network
 cp -r ../blockchain/network/organizations backend/blockchain/network/organizations

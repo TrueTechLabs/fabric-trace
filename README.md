@@ -66,6 +66,7 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 **严格按照以下步骤操作，以下步骤已经经过上百人次的验证，如果遇到报错请仔细检查是否遗漏某个步骤。
 如果对Linux命令不熟悉，请一定先学习下：[快速入门Linux及使用VSCode远程连接Linux服务器](https://blog.csdn.net/qq_41575489/article/details/139434933)，遇到报错后一定不能跳过，解决完再往下一步！**
 
+[**特别推荐：使用Docker部署项目**](./Docker_Setup_Guide.md)
 1. 安装docker 
 
 	```bash
@@ -232,7 +233,7 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 `./start.sh` 如果遇到报错可以执行以下命令后再试：
 执行清理所有的容器指令：
 `docker rm -f $(docker ps -aq)`
-2. 在`fabric-trace/application`目录下： 执行： `./start.sh`
+2. 在`fabric-trace/application`目录下： 执行： `./start_prod.sh`
 3. 在http://服务器IP:9090打开
 
 	注意：此方式部署项目会在后台运行，如果后续遇到端口号占用可以尝试关闭占用9090端口号的进程，可以参考：
