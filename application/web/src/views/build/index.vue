@@ -136,7 +136,7 @@ export default {
           this.downloadUrl = data.msg;
           if (data.code == 0) {
             // this.$message.success('构建成功！' + data.msg);
-            this.dialog2Visible = true;
+            this.dialog3Visible = true;
           }
           else {
             this.$message.error('构建失败：' + data.msg);
