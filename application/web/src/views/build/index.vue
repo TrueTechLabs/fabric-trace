@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1 style="color: #1f2f3d; text-align: center;">5分钟构建任意溯源系统</h1>
-    
     <p style="color: #5e6d82; text-align: center;">请对比字段填写，生成个性化的溯源系统。激活码仅可使用一次，</p>
     <p style="color: #5e6d82; text-align: center;">提交前请认真对比，生成后请尽快下载并备份，源码在服务器保留一周后删除。</p>
     <div style="text-align: center; margin-bottom: 20px;">
@@ -61,10 +60,10 @@
           <el-input v-model="form[key]" :placeholder="'请输入 ' + key + ' 值'"></el-input>
         </el-form-item>
         <div style="text-align: center; margin-top: 20px;">
-          <el-button type="primary" @click="submitForm" v-loading="loading" element-loading-text="构建中，稍等1分钟">提交表单</el-button>
+          <el-button type="primary" @click="submitForm" v-loading="loading" element-loading-text="构建中，稍等1分钟" >开始构建</el-button>
         </div>
       </el-form>
-      <el-button type="text" @click="dialog1Visible = true" style="display: block;margin-top: 50px;">如何删除此页面？</el-button> 
+      <el-button type="text" @click="dialog1Visible = true" style="display: block;margin-top: 50px;">如何删除此页面？</el-button>
     </div>
   </div>
 </template>
@@ -123,21 +122,30 @@ export default {
         params.append(key, this.form[key]);
       }
       fetch('http://realcool.top:8088/activate', {
+      // fetch('http://127.0.0.1:8088/activate', {
+
         method: 'POST',
         body: params,
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       })
         .then(response => response.json())
         .then(data => {
-          this.$message.success('构建成功！'+data.msg);
+          
           console.log('响应数据：', data);
           this.loading = false;
           this.downloadUrl = data.msg;
-          this.dialog3Visible = true;
+          if (data.code == 0) {
+            // this.$message.success('构建成功！' + data.msg);
+            this.dialog2Visible = true;
+          }
+          else {
+            this.$message.error('构建失败：' + data.msg);
+            console.log('构建失败：', data.msg);
+          }
         })
         .catch(error => {
           this.$message.error('提交失败，请重试！');
-          console.error('提交失败：', error);
+          console.error('提交失败：' + error);
           this.loading = false;
         });
       
