@@ -57,7 +57,7 @@
           <el-form-item label="车牌号:" style="width: 300px" label-width="120px">
             <el-input v-model="tracedata.Driver_input.Dr_carNumber" />
           </el-form-item>
-          <el-form-item label="运输工具:" style="width: 300px" label-width="120px">
+          <el-form-item label="运输记录：" style="width: 300px" label-width="120px">
             <el-input v-model="tracedata.Driver_input.Dr_transport" />
           </el-form-item>
         </div>
