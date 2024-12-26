@@ -146,7 +146,7 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 4. 启动区块链部分。在fabric-trace/blockchain/network目录下:
 
 	```bash
-	# 仅在首次使用执行：下载Fabric Docker镜像。如果拉取速度过慢或失败请检查是否完成docker换源，或者更换一个其他的镜像源再试。
+	# 仅在首次使用执行：下载Fabric Docker镜像。如果拉取速度过慢或失败请检查是否完成docker换源并执行了重启docker命令。
 	./install-fabric.sh -f 2.5.6 d 
 	```
 	```bash
@@ -186,7 +186,7 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 	```
 8. 在腾讯云轻量应用服务器防火墙页面，放行TCP端口`8080,9090,9528`
 ![防火墙配置](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/picgo202404151240899.png)
-9. 在浏览器中打开：http://云服务器IP:9528 即可看到前端页面。
+9. 在浏览器中打开：http://云服务器IP:9528 即可看到前端页面。如果出现network error等网络报错，请按步骤6更换IP后重启项目。
 10. 使用tape对项目进行压力测试
 根据blockchain/chaincode/chaincode/smartcontract.go中的合约函数的签名，编写压测的参数，需要修改的内容是tape目录下的yaml文件中的args。args第一个参数是函数名，后面的参数是函数的参数。例如：
 	```yaml
