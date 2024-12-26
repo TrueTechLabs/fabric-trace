@@ -1,4 +1,5 @@
 
+基于区块链Hyperledger Fabric V2.5的农产品溯源/商品/通用溯源应用模板，部署简单，附压测工具、区块链浏览器，文档详细并有配套课程。可以快速使用本系统搭建自己的溯源系统，帮助想法快速落地。
 
 **项目演示站点:** http://t.realcool.top/
 
@@ -18,7 +19,7 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 
 ![TrueTechLabs Fabric学习交流QQ群：776873343](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/picgoimg202403062054644.jpg)
 #### 一、项目介绍
-基于区块链Hyperledger Fabric V2.5的农产品溯源/商品/通用溯源应用模板，部署简单，附压测工具tape、区块链浏览器，文档详细。可以快速使用本系统搭建自己的溯源系统，帮助想法快速落地。采用的技术栈：Fabric V2.5、Gin、Vue.js、Mysql。
+基于区块链Hyperledger Fabric V2.5的农产品溯源/商品/通用溯源应用模板，部署简单，附压测工具、区块链浏览器，文档详细并有配套课程。可以快速使用本系统搭建自己的溯源系统，帮助想法快速落地。采用的技术栈：Fabric V2.5、Gin、Vue.js、Mysql。
 
 ![项目系统架构图](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/picgo319183738-60337eb8-1799-435f-b0a5-8ac61761aa28.png)
 ![多类型用户注册](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/picgo202404151236356.jpg)
@@ -30,14 +31,14 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 **Github**:
 [https://github.com/TrueTechLabs/fabric-trace](https://github.com/TrueTechLabs/fabric-trace)
 
-**Gitee**:
+**Gitee**（与Github同步）:
 [https://gitee.com/real__cool/fabric-trace](https://gitee.com/real__cool/fabric-trace)
 
 ##### 搭建视频地址：
 [https://www.bilibili.com/video/BV1Ar421H7TK](https://www.bilibili.com/video/BV1Ar421H7TK)
 
 ##### 附完整一刀未剪的搭建视频:
-演示使用临时服务器，建议使按年付费价格划算一些，具体购买方式参见下方搭建步骤。
+演示使用临时云服务器，建议使按年付费价格划算一些，具体购买方式参见下方搭建步骤。
 [https://www.bilibili.com/video/BV1mF4m1P7Go](https://www.bilibili.com/video/BV1mF4m1P7Go)。
 
 ##### 项目文档地址(部分内容需要订阅专栏）：
@@ -52,16 +53,15 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 。如果您不同意本声明请不要使用本项目。
 
 #### 三、项目特点
-本项目采用Hyperledger Fabric V2.5，属于目前最新的Fabric版本，具有更好的性能和稳定性，调用链码使用fabric-gateway模式，是当前版本的推荐方式。内置了tape压测工具，可以方便的对区块链网络进行压测；内置了区块链浏览器，可以方便地查询交易信息。
-项目结构清晰，代码注释详细，方便二次开发。结合了mysql实现账户注册登录功能，更符合真实业务场景。
+本项目采用Hyperledger Fabric V2.5，属于目前最新的Fabric版本，具有更好的性能和稳定性，调用链码使用fabric-gateway模式，是当前版本的推荐方式。内置了tape压测工具，可以方便的对区块链网络进行压测；内置了区块链浏览器，可以方便地查询交易信息。项目结构清晰，代码注释详细，方便二次开发。结合了mysql实现账户注册登录功能，更符合真实业务场景。
 
 #### 四、项目背景
 区块链技术的出现，为溯源系统的建设提供了新的思路。区块链技术的不可篡改性、去中心化、可追溯等特点，使得区块链技术成为溯源系统的理想选择。本项目基于Hyperledger Fabric V2.5，实现了一个农产品溯源系统。 在本区块链系统中，有5个内置的角色：种植户、工厂、驾驶员、商店、消费者。其中种植户、工厂、驾驶员、商店可以将信息上链，消费者有信息溯源权限。上述可以上链信息的角色各可以输入5个农产品的属性，方便二次开发。本项目的目标是作为Fabric V2.5下的一个通用溯源模板。
 
 #### 五、搭建步骤
-> 如果部分内容与视频不一致请以本文档为准
+> 由于相关资源的失效，如果部分内容与视频不一致请以本文档为准
 
- 强烈推荐按照步骤使用云服务器搭建本系统，虚拟机的问题较多。点击此链接直达新人活动页面：[https://curl.qcloud.com/Sjy0zKjy](https://curl.qcloud.com/Sjy0zKjy) 点击首单特惠，**购买2核4G或以上的服务器**，199/年（价格经常会调整），如果后续准备做程序开发可以用新用户优惠买三年的，安装Ubuntu20.04系统。
+强烈推荐按照步骤使用全新的云服务器搭建本系统，虚拟机的问题较多。点击此链接直达新人活动页面：[https://curl.qcloud.com/Sjy0zKjy](https://curl.qcloud.com/Sjy0zKjy) 点击首单特惠，**购买2核4G或以上的服务器**，199/年（价格经常会调整），如果后续准备做程序开发可以用新用户优惠买三年的，安装Ubuntu20.04系统。
 
 **严格按照以下步骤操作，以下步骤已经经过上百人次的验证，如果遇到报错请仔细检查是否遗漏某个步骤。
 如果对Linux命令不熟悉，请一定先学习下：[快速入门Linux及使用VSCode远程连接Linux服务器](https://blog.csdn.net/qq_41575489/article/details/139434933)，遇到报错后一定不能跳过，解决完再往下一步！**
@@ -78,7 +78,7 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 	newgrp docker 
 	sudo mkdir -p /etc/docker
 	#配置docker镜像加速，近期非常不稳定，如果以下源不好用可以再找下其他源
-	#下边的源2024.8.29日测试可用
+	#下边的源2024.12.26日测试可用
 	sudo tee /etc/docker/daemon.json <<-'EOF'
 	{
 	    "registry-mirrors": [
@@ -187,7 +187,7 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 8. 在腾讯云轻量应用服务器防火墙页面，放行TCP端口`8080,9090,9528`
 ![防火墙配置](https://truetechlabs-1259203851.cos.ap-shanghai.myqcloud.com/picgo202404151240899.png)
 9. 在浏览器中打开：http://云服务器IP:9528 即可看到前端页面。如果出现network error等网络报错，请按步骤6更换IP后重启项目。
-10. 使用tape对项目进行压力测试
+10. 使用tape对项目进行压力测试（仅做测试demo，信息上链时有bug，建议使用课程里的caliper）
 根据blockchain/chaincode/chaincode/smartcontract.go中的合约函数的签名，编写压测的参数，需要修改的内容是tape目录下的yaml文件中的args。args第一个参数是函数名，后面的参数是函数的参数。例如：
 	```yaml
 	args:
