@@ -13,7 +13,8 @@
       title="删除此页面"
       :visible.sync="dialog1Visible"
       width="30%"
-      :before-close="handleClose">
+      :before-close="handleClose"
+    >
       <span>1. 在fabric-trace/application/web目录下，运行./rmbuildsyspage.sh</span>
       <br>
       <span style="display: block;margin-top: 20px;">2.重新启动前端，npm run dev</span>
@@ -26,15 +27,15 @@
       title="开发不易，感谢支持！"
       :visible.sync="dialog2Visible"
       width="30%"
-      :before-close="handleClose">
-      <span>激活码售价：399元</span>
+      :before-close="handleClose"
+    >
+      <span>激活码售价：269元</span>
 
       <br>
-      <span style="display: block; margin-top: 20px;">请加QQ群776873343联系群主购买</span>
+      <span style="display: block; margin-top: 20px;">请加QQ群776873343联系群主购买 （补差价可包搭建）</span>
       <br>
-      <span style="display: block; margin-top: 20px;">感谢曾付费支持本项目的伙伴！如果您在2024年12月9日前购买过此项目的课程/专栏，</span>
+      <span style="display: block; margin-top: 20px;">购买课程后可99元购买激活码</span>
       <br>
-      <span>在2024.12月前可75折购买激活码一个</span>
       <span slot="footer" class="dialog-footer">
         <el-button type="primary" @click="dialog2Visible = false">确 定</el-button>
       </span>
@@ -44,7 +45,8 @@
       title="构建成功！"
       :visible.sync="dialog3Visible"
       width="30%"
-      :before-close="handleClose">
+      :before-close="handleClose"
+    >
       <span>下载地址：</span>
       <br>
       <span style="display: block;margin-top: 20px;">{{ downloadUrl }} </span>
@@ -53,18 +55,19 @@
       </span>
     </el-dialog>
 
-    <div class="form-container" >
+    <div class="form-container">
       <el-form ref="form" :model="form" label-width="150px" class="form">
 
         <el-form-item v-for="(value, key) in form" :key="key" :label="key">
-          <el-input v-model="form[key]" :placeholder="'请输入 ' + key + ' 值'"></el-input>
+          <el-input v-model="form[key]" :placeholder="'请输入 ' + key + ' 值'" />
         </el-form-item>
         <div style="text-align: center; margin-top: 20px;">
-          <el-button type="primary" @click="submitForm" v-loading="loading" element-loading-text="构建中，稍等1分钟" >开始构建</el-button>
+          <el-button v-loading="loading" type="primary" element-loading-text="构建中，稍等1分钟" @click="submitForm">开始构建</el-button>
         </div>
       </el-form>
-      <el-button type="text" @click="dialog1Visible = true" style="display: block;margin-top: 50px;">如何删除此页面？</el-button>
+      <el-button type="text" style="display: block;margin-top: 20px;" @click="dialog1Visible = true">如何删除此页面？</el-button>
     </div>
+    <div style="height: 30px;" />
   </div>
 </template>
 
@@ -77,49 +80,49 @@ export default {
       dialog1Visible: false,
       dialog2Visible: false,
       form: {
-        parm1: "基于区块链的农产品溯源系统",
-        parm2: "农产品信息",
-        parm3: "农产品名称",
-        parm4: "产地",
-        parm5: "种植时间",
-        parm6: "采摘时间",
-        parm7: "种植户名称",
-        parm8: "种植户",
-        parm9: "工厂信息",
-        parm10: "商品名称",
-        parm11: "生产批次",
-        parm12: "生产时间",
-        parm13: "工厂名称与厂址",
-        parm14: "工厂电话",
-        parm15: "工厂",
-        parm16: "物流轨迹信息",
-        parm17: "姓名",
-        parm18: "年龄",
-        parm19: "联系电话",
-        parm20: "车牌号",
-        parm21: "运输记录",
-        parm22: "物流司机",
-        parm23: "商店信息",
-        parm24: "入库时间",
-        parm25: "销售时间",
-        parm26: "商店名称",
-        parm27: "商店位置",
-        parm28: "商店电话",
-        parm29: "商店",
-        parm30: "消费者",
-        parm31: "云服务器IP,例如：32.12.243.30/192.168.1.20",
-        activatecode: "激活码"
+        parm1: '基于区块链的农产品溯源系统',
+        parm2: '农产品信息',
+        parm3: '农产品名称',
+        parm4: '产地',
+        parm5: '种植时间',
+        parm6: '采摘时间',
+        parm7: '种植户名称',
+        parm8: '种植户',
+        parm9: '工厂信息',
+        parm10: '商品名称',
+        parm11: '生产批次',
+        parm12: '生产时间',
+        parm13: '工厂名称与厂址',
+        parm14: '工厂电话',
+        parm15: '工厂',
+        parm16: '物流轨迹信息',
+        parm17: '姓名',
+        parm18: '年龄',
+        parm19: '联系电话',
+        parm20: '车牌号',
+        parm21: '运输记录',
+        parm22: '物流司机',
+        parm23: '商店信息',
+        parm24: '入库时间',
+        parm25: '销售时间',
+        parm26: '商店名称',
+        parm27: '商店位置',
+        parm28: '商店电话',
+        parm29: '商店',
+        parm30: '消费者',
+        parm31: '云服务器IP,例如：32.12.243.30/192.168.1.20',
+        activatecode: '激活码'
       },
       downloadUrl: '',
-      dialog3Visible: false,
-    };
+      dialog3Visible: false
+    }
   },
   methods: {
     submitForm() {
-      this.loading = true;
-      const params = new URLSearchParams();
+      this.loading = true
+      const params = new URLSearchParams()
       for (const key in this.form) {
-        params.append(key, this.form[key]);
+        params.append(key, this.form[key])
       }
       fetch('http://realcool.top:8088/activate', {
       // fetch('http://127.0.0.1:8088/activate', {
@@ -130,28 +133,26 @@ export default {
       })
         .then(response => response.json())
         .then(data => {
-          
-          console.log('响应数据：', data);
-          this.loading = false;
-          this.downloadUrl = data.msg;
+          console.log('响应数据：', data)
+          this.loading = false
+          this.downloadUrl = data.msg
+          // eslint-disable-next-line eqeqeq
           if (data.code == 0) {
             // this.$message.success('构建成功！' + data.msg);
-            this.dialog3Visible = true;
-          }
-          else {
-            this.$message.error('构建失败：' + data.msg);
-            console.log('构建失败：', data.msg);
+            this.dialog3Visible = true
+          } else {
+            this.$message.error('构建失败：' + data.msg)
+            console.log('构建失败：', data.msg)
           }
         })
         .catch(error => {
-          this.$message.error('提交失败，请重试！');
-          console.error('提交失败：' + error);
-          this.loading = false;
-        });
-      
+          this.$message.error('提交失败，请重试！')
+          console.error('提交失败：' + error)
+          this.loading = false
+        })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
