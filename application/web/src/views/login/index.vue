@@ -3,7 +3,7 @@
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
 
       <div class="title-container">
-        <h3 class="title">基于区块链的农产品溯源系统</h3>
+        <h3 class="title" style="color: white;">基于区块链的农产品溯源系统</h3>
       </div>
       <div v-show="isLoginPage">
         <el-form-item prop="username">
@@ -323,6 +323,10 @@ $light_gray:#eee;
     color: $dark_gray;
     cursor: pointer;
     user-select: none;
+  }
+
+  ::v-deep .el-input__inner::placeholder {
+  color: white !important;
   }
 }
 </style>
