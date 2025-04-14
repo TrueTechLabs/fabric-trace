@@ -278,6 +278,7 @@ mysql未启动，重启区块链网络部分可以一并重启mysql。
 10. Chaincode installation on peerg.orgl has failed
 Deploying chaincode failed
 此问题并非第一个报错，仔细检查之前的步骤中第一个报错，然后与上述问题对照。
+11. eslint相关报错 此报错为代码规范性报错，不影响运行，可以根据提示自行修复（可不修复）
 12. 其他问题
 使用全新Ubuntu20.04系统，重新严格按照步骤再试，出现第一个报错后在视频下留言。
 
