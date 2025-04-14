@@ -268,14 +268,17 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 	```
 
 6. 提示mysql或3337端口错误
-mysql未启动，重启区块链网络部分可以一并重启mysql
+mysql未启动，重启区块链网络部分可以一并重启mysql。
 7. 前端提示network error、timeout
-修改好IP后重启整个项目；检查防火墙是否放行相关端口
+修改好IP后重启整个项目；检查防火墙是否放行相关端口。
 8. 前端登录页面提示404
 检查是否修改好IP并重启前端服务器，除了IP不要修改任何字符。
 9. npm run dev 不能启动前端
-检查npm install是否完整把所有包装上了
-10. 其他问题
+检查npm install是否完整把所有包装上了。
+10. Chaincode installation on peerg.orgl has failed
+Deploying chaincode failed
+此问题并非第一个报错，仔细检查之前的步骤中第一个报错，然后与上述问题对照。
+12. 其他问题
 使用全新Ubuntu20.04系统，重新严格按照步骤再试，出现第一个报错后在视频下留言。
 
 
