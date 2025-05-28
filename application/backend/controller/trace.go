@@ -3,6 +3,7 @@ package controller
 import (
 	"backend/pkg"
 	"fmt"
+	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -125,5 +126,30 @@ func buildArgs(c *gin.Context, farmer_traceability_code string) []string {
 	args = append(args, c.PostForm("arg3"))
 	args = append(args, c.PostForm("arg4"))
 	args = append(args, c.PostForm("arg5"))
+	file, _ := c.FormFile("file")
+	if file != nil {
+		// 保存前端传的图片
+		c.SaveUploadedFile(file, "files/uploadfiles/"+file.Filename)
+		// 计算文件的SHA256哈希值
+		fileSHA256, _ := pkg.CalculateFileSHA256("files/uploadfiles/" + file.Filename)
+		ext := pkg.GetFileExt(file.Filename)
+		c.SaveUploadedFile(file, fmt.Sprintf("files/images/%s.%s", fileSHA256, ext))
+		// 清理临时传的文件
+		os.Remove("files/uploadfiles/" + file.Filename)
+		args = append(args, fmt.Sprintf("%s.%s", fileSHA256, ext))
+	}
+	args = append(args, "")
 	return args
+}
+
+func GetImg(c *gin.Context) {
+	filename := c.Param("filename")
+	filePath := fmt.Sprintf("files/images/%s", filename)
+	if _, err := os.Stat(filePath); os.IsNotExist(err) {
+		c.JSON(404, gin.H{
+			"message": "file not found",
+		})
+		return
+	}
+	c.File(filePath)
 }

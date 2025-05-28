@@ -1,6 +1,7 @@
 app:
   name: "fabricTraceServer"
   mode: "dev"
+  ip : 119.45.247.29
   port: 9090
   salt: "testsalt"
 jwt:

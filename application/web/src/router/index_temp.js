@@ -54,135 +54,35 @@ export const constantRoutes = [
       meta: { title: '溯源信息录入', icon: 'el-icon-edit-outline' }
     }]
   },
-
   {
     path: '/trace',
     component: Layout,
-    children: [{
-      path: 'trace',
-      name: 'Trace',
-      component: () => import('@/views/trace/index'),
-      meta: { title: '溯源查询', icon: 'el-icon-search' }
-    }]
+    children: [
+      {
+        path: '',
+        name: 'Trace',
+        component: () => import('@/views/trace/index.vue'),
+        meta: { title: '溯源查询', icon: 'el-icon-search' }
+      },
+      {
+        path: ':traceability_code',
+        name: 'TraceDetail',
+        component: () => import('@/views/trace/index.vue'),
+        meta: { title: '溯源查询详情' },
+        hidden: true
+      }
+    ]
   },
- 
-
-  // {
-  //   path: '/example',
-  //   component: Layout,
-  //   redirect: '/example/table',
-  //   name: 'Example',
-  //   meta: { title: 'Example', icon: 'el-icon-s-help' },
-  //   children: [
-  //     {
-  //       path: 'table',
-  //       name: 'Table',
-  //       component: () => import('@/views/table/index'),
-  //       meta: { title: 'Table', icon: 'table' }
-  //     },
-  //     {
-  //       path: 'tree',
-  //       name: 'Tree',
-  //       component: () => import('@/views/tree/index'),
-  //       meta: { title: 'Tree', icon: 'tree' }
-  //     }
-  //   ]
-  // },
-  //
-  // {
-  //   path: '/form',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       name: 'Form',
-  //       component: () => import('@/views/form/index'),
-  //       meta: { title: 'Form', icon: 'form' }
-  //     }
-  //   ]
-  // },
-  //
-  // {
-  //   path: '/nested',
-  //   component: Layout,
-  //   redirect: '/nested/menu1',
-  //   name: 'Nested',
-  //   meta: {
-  //     title: 'Nested',
-  //     icon: 'nested'
-  //   },
-  //   children: [
-  //     {
-  //       path: 'menu1',
-  //       component: () => import('@/views/nested/menu1/index'), // Parent router-view
-  //       name: 'Menu1',
-  //       meta: { title: 'Menu1' },
-  //       children: [
-  //         {
-  //           path: 'menu1-1',
-  //           component: () => import('@/views/nested/menu1/menu1-1'),
-  //           name: 'Menu1-1',
-  //           meta: { title: 'Menu1-1' }
-  //         },
-  //         {
-  //           path: 'menu1-2',
-  //           component: () => import('@/views/nested/menu1/menu1-2'),
-  //           name: 'Menu1-2',
-  //           meta: { title: 'Menu1-2' },
-  //           children: [
-  //             {
-  //               path: 'menu1-2-1',
-  //               component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-  //               name: 'Menu1-2-1',
-  //               meta: { title: 'Menu1-2-1' }
-  //             },
-  //             {
-  //               path: 'menu1-2-2',
-  //               component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-  //               name: 'Menu1-2-2',
-  //               meta: { title: 'Menu1-2-2' }
-  //             }
-  //           ]
-  //         },
-  //         {
-  //           path: 'menu1-3',
-  //           component: () => import('@/views/nested/menu1/menu1-3'),
-  //           name: 'Menu1-3',
-  //           meta: { title: 'Menu1-3' }
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       path: 'menu2',
-  //       component: () => import('@/views/nested/menu2/index'),
-  //       name: 'Menu2',
-  //       meta: { title: 'menu2' }
-  //     }
-  //   ]
-  // },
-
   {
     path: 'external-link',
     component: Layout,
     children: [
       {
-        path: 'http://192.168.1.6:8080',
+        path: 'http://119.45.247.29:8080',
         meta: { title: '区块链浏览器', icon: 'el-icon-discover' }
       }
     ]
   },
-  // {
-  //   path: '/',
-  //   component: Layout,
-  //   redirect: '/build',
-  //   children: [{
-  //     path: 'build',
-  //     name: 'Build',
-  //     component: () => import('@/views/build/index'),
-  //     meta: { title: '构建任意溯源系统', icon: 'el-icon-s-tools' }
-  //   }]
-  // },
-
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]

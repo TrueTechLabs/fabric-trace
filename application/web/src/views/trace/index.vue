@@ -26,6 +26,15 @@
             <el-form-item label="种植户名称：">
               <span>{{ props.row.farmer_input.fa_farmerName }}</span>
             </el-form-item>
+            <el-form-item v-if="props.row.farmer_input.fa_img" label="相关图片（点击下载）：" class="image-item">
+              <a :href="`${baseApi}getImg/${props.row.farmer_input.fa_img}`" target="_blank">
+                <el-image
+                  style="width: 100px; height: 100px;"
+                  :src="`${baseApi}getImg/${props.row.farmer_input.fa_img}`"
+                  fit="cover"
+                />
+              </a>
+            </el-form-item>
             <el-form-item label="区块链交易ID：">
               <span>{{ props.row.farmer_input.fa_txid }}</span>
             </el-form-item>
@@ -47,6 +56,15 @@
             </el-form-item>
             <el-form-item label="工厂电话：">
               <span>{{ props.row.factory_input.fac_contactNumber }}</span>
+            </el-form-item>
+            <el-form-item v-if="props.row.factory_input.fac_img" label="相关图片（点击下载）：" class="image-item">
+              <a :href="`${baseApi}getImg/${props.row.factory_input.fac_img}`" target="_blank">
+                <el-image
+                  style="width: 100px; height: 100px;"
+                  :src="`${baseApi}getImg/${props.row.factory_input.fac_img}`"
+                  fit="cover"
+                />
+              </a>
             </el-form-item>
             <el-form-item label="区块链交易ID：">
               <span>{{ props.row.factory_input.fac_txid }}</span>
@@ -70,6 +88,15 @@
             <el-form-item label="运输记录：">
               <span>{{ props.row.driver_input.dr_transport }}</span>
             </el-form-item>
+            <el-form-item v-if="props.row.driver_input.dr_img" label="相关图片（点击下载）：" class="image-item">
+              <a :href="`${baseApi}getImg/${props.row.driver_input.dr_img}`" target="_blank">
+                <el-image
+                  style="width: 100px; height: 100px;"
+                  :src="`${baseApi}getImg/${props.row.driver_input.dr_img}`"
+                  fit="cover"
+                />
+              </a>
+            </el-form-item>
             <el-form-item label="区块链交易ID：">
               <span>{{ props.row.driver_input.dr_txid }}</span>
             </el-form-item>
@@ -91,6 +118,15 @@
             </el-form-item>
             <el-form-item label="商店电话：">
               <span>{{ props.row.shop_input.sh_shopPhone }}</span>
+            </el-form-item>
+            <el-form-item v-if="props.row.shop_input.sh_img" label="相关图片(点击下载）：" class="image-item">
+              <a :href="`${baseApi}getImg/${props.row.shop_input.sh_img}`" target="_blank">
+                <el-image
+                  style="width: 100px; height: 100px;"
+                  :src="`${baseApi}getImg/${props.row.shop_input.sh_img}`"
+                  fit="cover"
+                />
+              </a>
             </el-form-item>
             <el-form-item label="区块链交易ID：">
               <span>{{ props.row.shop_input.sh_txid }}</span>
@@ -127,7 +163,8 @@ export default {
     return {
       tracedata: [],
       loading: false,
-      input: ''
+      input: '',
+      baseApi: process.env.VUE_APP_BASE_API
     }
   },
   computed: {
@@ -137,9 +174,15 @@ export default {
     ])
   },
   created() {
-    getFruitList().then(res => {
-      this.tracedata = JSON.parse(res.data)
-    })
+    const code = this.$route.params.traceability_code
+    if (code) {
+      this.input = code
+      this.FruitInfo()
+    } else {
+      getFruitList().then(res => {
+        this.tracedata = JSON.parse(res.data)
+      })
+    }
   },
   methods: {
     AllFruitInfo() {
@@ -193,4 +236,34 @@ export default {
     line-height: 46px;
   }
 }
+
+.demo-table-expand {
+  font-size: 0;
+}
+
+.demo-table-expand label {
+  width: 90px;
+  color: #99a9bf;
+}
+
+.demo-table-expand .el-form-item {
+  margin-right: 0;
+  margin-bottom: 0;
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.demo-table-expand .image-item {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.demo-table-expand .image-item .el-form-item__content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 </style>

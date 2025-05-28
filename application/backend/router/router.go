@@ -52,5 +52,6 @@ func SetupRouter() *gin.Engine {
 	r.POST("/getAllFruitInfo", middleware.JWTAuthMiddleware(), con.GetAllFruitInfo)
 	// 获取农产品上链历史(溯源)
 	r.POST("/getFruitHistory", middleware.JWTAuthMiddleware(), con.GetFruitHistory)
+	r.GET("/getImg/:filename", con.GetImg) // 获取图片
 	return r
 }

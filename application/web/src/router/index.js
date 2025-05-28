@@ -54,18 +54,25 @@ export const constantRoutes = [
       meta: { title: '溯源信息录入', icon: 'el-icon-edit-outline' }
     }]
   },
-
   {
     path: '/trace',
     component: Layout,
-    children: [{
-      path: 'trace',
-      name: 'Trace',
-      component: () => import('@/views/trace/index'),
-      meta: { title: '溯源查询', icon: 'el-icon-search' }
-    }]
+    children: [
+      {
+        path: '',
+        name: 'Trace',
+        component: () => import('@/views/trace/index.vue'),
+        meta: { title: '溯源查询', icon: 'el-icon-search' }
+      },
+      {
+        path: ':traceability_code',
+        name: 'TraceDetail',
+        component: () => import('@/views/trace/index.vue'),
+        meta: { title: '溯源查询详情' },
+        hidden: true
+      }
+    ]
   },
-  
   {
     path: 'external-link',
     component: Layout,
@@ -77,7 +84,7 @@ export const constantRoutes = [
     ]
   },
   {
-    path: '/',
+    path: '/build',
     component: Layout,
     redirect: '/build',
     children: [{

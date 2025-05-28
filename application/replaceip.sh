@@ -5,6 +5,7 @@ FILES=(
     "web/.env.development"
     "web/.env.production"  
     "web/src/router/index.js"
+    "backend/settings/config.yaml"
 )
 
 # 定义预设的云服务器 IP

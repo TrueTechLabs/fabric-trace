@@ -5,6 +5,7 @@ files=(
     "web/.env.development"
     "web/.env.production"
     "web/src/router/index.js"
+    "backend/settings/config.yaml"
 )
 
 # 遍历文件列表并替换 IP 地址

@@ -35,7 +35,7 @@ func (s *SmartContract) RegisterUser(ctx contractapi.TransactionContextInterface
 }
 
 // 农产品上链，传入用户ID、农产品上链信息
-func (s *SmartContract) Uplink(ctx contractapi.TransactionContextInterface, userID string, traceability_code string, arg1 string, arg2 string, arg3 string, arg4 string, arg5 string) (string, error) {
+func (s *SmartContract) Uplink(ctx contractapi.TransactionContextInterface, userID string, traceability_code string, arg1 string, arg2 string, arg3 string, arg4 string, arg5 string, arg6 string) (string, error) {
 	// 获取用户类型
 	userType, err := s.GetUserType(ctx, userID)
 	if err != nil {
@@ -78,6 +78,7 @@ func (s *SmartContract) Uplink(ctx contractapi.TransactionContextInterface, user
 		fruit.Farmer_input.Fa_plantTime = arg3
 		fruit.Farmer_input.Fa_pickingTime = arg4
 		fruit.Farmer_input.Fa_farmerName = arg5
+		fruit.Farmer_input.Fa_img = arg6
 		fruit.Farmer_input.Fa_Txid = txid
 		fruit.Farmer_input.Fa_Timestamp = time
 	// 工厂
@@ -88,6 +89,7 @@ func (s *SmartContract) Uplink(ctx contractapi.TransactionContextInterface, user
 		fruit.Factory_input.Fac_productionTime = arg3
 		fruit.Factory_input.Fac_factoryName = arg4
 		fruit.Factory_input.Fac_contactNumber = arg5
+		fruit.Factory_input.Fac_img = arg6
 		fruit.Factory_input.Fac_Txid = txid
 		fruit.Factory_input.Fac_Timestamp = time
 	// 运输司机
@@ -98,6 +100,7 @@ func (s *SmartContract) Uplink(ctx contractapi.TransactionContextInterface, user
 		fruit.Driver_input.Dr_phone = arg3
 		fruit.Driver_input.Dr_carNumber = arg4
 		fruit.Driver_input.Dr_transport = arg5
+		fruit.Driver_input.Dr_img = arg6
 		fruit.Driver_input.Dr_Txid = txid
 		fruit.Driver_input.Dr_Timestamp = time
 	// 商店
@@ -108,6 +111,7 @@ func (s *SmartContract) Uplink(ctx contractapi.TransactionContextInterface, user
 		fruit.Shop_input.Sh_shopName = arg3
 		fruit.Shop_input.Sh_shopAddress = arg4
 		fruit.Shop_input.Sh_shopPhone = arg5
+		fruit.Shop_input.Sh_img = arg6
 		fruit.Shop_input.Sh_Txid = txid
 		fruit.Shop_input.Sh_Timestamp = time
 

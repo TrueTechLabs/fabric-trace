@@ -78,6 +78,22 @@
             <el-input v-model="tracedata.Shop_input.Sh_shopPhone" />
           </el-form-item>
         </div>
+        <el-form-item label="上传图片:" style="width: 300px" label-width="120px">
+          <el-upload
+            action="#"
+            class="upload-demo"
+            :show-file-list="false"
+            :on-change="onImageSelected"
+            :before-upload="beforeUpload"
+            accept="image/*"
+          >
+            <el-button type="primary" size="mini">选择图片</el-button>
+          </el-upload>
+
+          <div v-if="imagePreview" style="margin-top: 10px;">
+            <img :src="imagePreview" alt="预览图" style="max-width: 100%; max-height: 150px; border: 1px solid #dcdfe6;" />
+          </div>
+        </el-form-item>
       </el-form>
       <span slot="footer" style="color: gray;" class="dialog-footer">
         <el-button v-show="userType != '消费者'" type="primary" plain style="margin-left: 220px;" @click="submittracedata()">提 交</el-button>
@@ -104,7 +120,8 @@ export default {
           Fa_origin: '',
           Fa_plantTime: '',
           Fa_pickingTime: '',
-          Fa_farmerName: ''
+          Fa_farmerName: '',
+          Fa_img: null
         },
         Factory_input: {
           Fac_productName: '',
@@ -128,6 +145,8 @@ export default {
           Sh_shopPhone: ''
         }
       },
+      imageFile: null,
+      imagePreview: null,
       loading: false
     }
   },
@@ -148,6 +167,7 @@ export default {
       })
       var formData = new FormData()
       formData.append('traceability_code', this.tracedata.traceability_code)
+      formData.append('file', this.imageFile)
       // 根据不同的用户给arg1、arg2、arg3..赋值,
       switch (this.userType) {
         case '种植户':
@@ -197,6 +217,15 @@ export default {
         loading.close()
         console.log(err)
       })
+    },
+    onImageSelected(file) {
+      // 生成预览图
+      this.imagePreview = URL.createObjectURL(file.raw)
+      this.imageFile = file.raw
+    },
+    beforeUpload() {
+      // 禁止自动上传
+      return false
     }
   }
 }

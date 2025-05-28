@@ -53,6 +53,7 @@ type Farmer_input struct {
 	Fa_plantTime   string `json:"fa_plantTime"`
 	Fa_pickingTime string `json:"fa_pickingTime"`
 	Fa_farmerName  string `json:"fa_farmerName"`
+	Fa_img         string `json:"fa_img"` // 图片链接
 	Fa_Txid        string `json:"fa_txid"`
 	Fa_Timestamp   string `json:"fa_timestamp"`
 }
@@ -71,6 +72,7 @@ type Factory_input struct {
 	Fac_productionTime  string `json:"fac_productionTime"`
 	Fac_factoryName     string `json:"fac_factoryName"`
 	Fac_contactNumber   string `json:"fac_contactNumber"`
+	Fac_img             string `json:"fac_img"` // 图片链接
 	Fac_Txid            string `json:"fac_txid"`
 	Fac_Timestamp       string `json:"fac_timestamp"`
 }
@@ -89,6 +91,7 @@ type Driver_input struct {
 	Dr_phone     string `json:"dr_phone"`
 	Dr_carNumber string `json:"dr_carNumber"`
 	Dr_transport string `json:"dr_transport"`
+	Dr_img       string `json:"dr_img"` // 图片链接
 	Dr_Txid      string `json:"dr_txid"`
 	Dr_Timestamp string `json:"dr_timestamp"`
 }
@@ -107,6 +110,7 @@ type Shop_input struct {
 	Sh_shopName    string `json:"sh_shopName"`
 	Sh_shopAddress string `json:"sh_shopAddress"`
 	Sh_shopPhone   string `json:"sh_shopPhone"`
+	Sh_img         string `json:"sh_img"` // 图片链接
 	Sh_Txid        string `json:"sh_txid"`
 	Sh_Timestamp   string `json:"sh_timestamp"`
 }
