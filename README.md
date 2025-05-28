@@ -70,6 +70,7 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 	```bash
 	#下载docker 
 	# 官方脚本当前已无法下载，使用gitee备份的脚本:
+	# 近期阿里云源不稳定，如遇超时可使用：--mirror AzureChinaCloud
 	curl -fsSL https://gitee.com/real__cool/fabric_install/raw/main/docker_install.sh | bash -s docker --mirror Aliyun
 	#添加当前用户到docker用户组 
 	sudo usermod -aG docker $USER 
