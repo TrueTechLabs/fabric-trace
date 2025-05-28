@@ -29,6 +29,10 @@ done
 ./network.sh deployCC -ccn trace -ccp ../chaincode -ccl go
 cp -r organizations explorer/
 
+# 创建文件存储目录
+mkdir -p ../../application/backend/files/uploadfiles
+mkdir -p ../../application/backend/files/downloadfiles
+mkdir -p ../../application/backend/files/images
+
 # 启动区块链浏览器
 docker compose -f explorer/docker-compose.yaml up -d
-
