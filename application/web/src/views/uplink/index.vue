@@ -78,7 +78,7 @@
             <el-input v-model="tracedata.Shop_input.Sh_shopPhone" />
           </el-form-item>
         </div>
-        <el-form-item label="上传图片:" style="width: 300px" label-width="120px">
+        <el-form-item v-show="userType != '消费者'" label="上传图片:" style="width: 300px" label-width="120px">
           <el-upload
             action="#"
             class="upload-demo"
@@ -91,7 +91,7 @@
           </el-upload>
 
           <div v-if="imagePreview" style="margin-top: 10px;">
-            <img :src="imagePreview" alt="预览图" style="max-width: 100%; max-height: 150px; border: 1px solid #dcdfe6;" />
+            <img :src="imagePreview" alt="预览图" style="max-width: 100%; max-height: 150px; border: 1px solid #dcdfe6;">
           </div>
         </el-form-item>
       </el-form>

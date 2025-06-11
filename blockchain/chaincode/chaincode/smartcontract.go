@@ -152,6 +152,13 @@ func (s *SmartContract) AddFruit(ctx contractapi.TransactionContextInterface, us
 	if err != nil {
 		return err
 	}
+	// 遍历用户的农产品列表，检查是否已经存在该农产品
+	for _, existingFruit := range user.FruitList {
+		if existingFruit.Traceability_code == fruit.Traceability_code {
+			return fmt.Errorf("the fruit with traceability code %s already exists in user %s's fruit list", fruit.Traceability_code, userID)
+		}
+	}
+	// 如果不存在，则将农产品添加到用户的农产品列表中
 	user.FruitList = append(user.FruitList, fruit)
 	userAsBytes, err := json.Marshal(user)
 	if err != nil {
