@@ -1,7 +1,7 @@
 
 基于区块链Hyperledger Fabric V2.5的农产品溯源/商品/通用溯源应用模板，部署简单，附压测工具tape/caliper、区块链浏览器，文档详细并有配套课程。可以快速使用本系统搭建自己的溯源系统，帮助想法快速落地。经统计，目前已部署1100次以上。
 
-**项目演示站点:** http://t.realcool.top/
+**项目演示站点:** https://t.realcool.top/
 
 与B站官方合作，本项目代码讲解与二次开发课程已发布，限时特价219元，支持试看: [B站：Fabric V2.5通用溯源项目讲解与二次开发课程](https://www.bilibili.com/cheese/play/ss15923?bsource=link_copy) ，购买课程有配套社群，方便交流与答疑。
 
