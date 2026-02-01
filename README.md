@@ -81,8 +81,10 @@ Fabric V2.5通用溯源课程活动：[【腾讯文档】：提交源码仓库�
 	sudo tee /etc/docker/daemon.json <<-'EOF'
 	{
 	    "registry-mirrors": [
-	        "https://docker.m.daocloud.io",
+			"https://docker.1ms.run",
 	        "https://docker.1panel.live",
+			"https://docker.m.ixdev.cn",
+			"https://docker.xuanyuan.me"
 	        "https://hub.rat.dev"
 	    ]
 	}
