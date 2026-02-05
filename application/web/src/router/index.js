@@ -84,17 +84,15 @@ export const constantRoutes = [
     ]
   },
   {
-    path: '/build',
+    path: '/config',
     component: Layout,
-    redirect: '/build',
     children: [{
-      path: 'build',
-      name: 'Build',
-      component: () => import('@/views/build/index'),
-      meta: { title: '构建任意溯源系统', icon: 'el-icon-s-tools' }
+      path: '',
+      name: 'Config',
+      component: () => import('@/views/config/index'),
+      meta: { title: '系统配置', icon: 'el-icon-setting' }
     }]
   },
-
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
