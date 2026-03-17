@@ -201,7 +201,7 @@
 			"https://docker.1ms.run",
 	        "https://docker.1panel.live",
 			"https://docker.m.ixdev.cn",
-			"https://docker.xuanyuan.me"
+			"https://docker.xuanyuan.me",
 	        "https://hub.rat.dev"
 	    ]
 	}
