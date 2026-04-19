@@ -10,11 +10,62 @@ import (
 func Register(c *gin.Context) {
 	// 将用户信息存入mysql数据库
 	var user model.MysqlUser
-	user.UserID = pkg.GenerateID()
-	user.Username = c.PostForm("username")
-	user.Password = c.PostForm("password")
-	user.RealInfo = pkg.EncryptByMD5(c.PostForm("username"))
-	err := pkg.InsertUser(&user)
+	userID, err := pkg.GenerateID()
+	if err != nil {
+		c.JSON(500, gin.H{
+			"message": "register failed: failed to generate user ID",
+			"error":   err.Error(),
+		})
+		return
+	}
+	user.UserID = userID
+
+	// 获取并验证用户名
+	username := c.PostForm("username")
+	if err := pkg.ValidateUsername(username); err != nil {
+		c.JSON(200, gin.H{
+			"message": "register failed：" + err.Error(),
+		})
+		return
+	}
+	user.Username = username
+
+	// 验证密码
+	password := c.PostForm("password")
+	if err := pkg.ValidatePassword(password); err != nil {
+		c.JSON(200, gin.H{
+			"message": "register failed：" + err.Error(),
+		})
+		return
+	}
+	user.Password = password
+
+	// 验证用户类型
+	userType := c.PostForm("userType")
+	if err := pkg.ValidateUserType(userType); err != nil {
+		c.JSON(200, gin.H{
+			"message": "register failed：" + err.Error(),
+		})
+		return
+	}
+
+	// 清理并验证真实信息（可选字段）
+	realInfo := c.PostForm("realInfo")
+	if realInfo != "" {
+		realInfo, err = pkg.TrimAndValidate(realInfo, 100)
+		if err != nil {
+			c.JSON(200, gin.H{
+				"message": "register failed：真实信息无效",
+			})
+			return
+		}
+		user.RealInfo = pkg.EncryptByMD5(realInfo)
+	} else {
+		// 如果没有提供真实信息，使用默认值（用户名的哈希）
+		user.RealInfo = pkg.EncryptByMD5(username)
+	}
+
+	err = pkg.InsertUser(&user)
 	if err != nil {
 		c.JSON(200, gin.H{
 			"message": "register failed：" + err.Error(),

@@ -36,7 +36,14 @@ module.exports = {
       warnings: false,
       errors: true
     },
-    before: require('./mock/mock-server.js')
+    before: require('./mock/mock-server.js'),
+    proxy: {
+      '/api': {
+        target: 'http://localhost:9090',
+        changeOrigin: true,
+        pathRewrite: { '^/api': '' }
+      }
+    }
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
@@ -91,6 +98,12 @@ module.exports = {
               inline: /runtime\..*\.js$/
             }])
             .end()
+          // 配置Terser移除生产环境console.log
+          config.optimization.minimizer('terser').tap((args) => {
+            args[0].terserOptions.compress.drop_console = true
+            args[0].terserOptions.compress.drop_debugger = true
+            return args
+          })
           config
             .optimization.splitChunks({
               chunks: 'all',

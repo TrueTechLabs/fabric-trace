@@ -3,15 +3,29 @@ app:
   mode: "dev"
   ip : 127.0.0.1
   port: 9090
-  salt: "testsalt"
+  salt: "testsalt"  # 生产环境请通过环境变量覆盖
 jwt:
-  secret: "testsecret"
+  secret: "testsecret"  # 生产环境请通过环境变量 FABRIC_TRACE_JWT_SECRET 覆盖
   issuer: "fabricTraceServer"
 mysql:
   host: "127.0.0.1"
   port: 3337
-  user: "root"  
-  password : "fabrictrace"
+  user: "root"
+  password : "fabrictrace"  # 生产环境请通过环境变量 FABRIC_TRACE_MYSQL_PASSWORD 覆盖
   charset: "utf8mb4"
   db : "fabrictrace"
-  
+cors:
+  allowed_origins:  # 生产环境请通过环境变量 FABRIC_TRACE_CORS_ALLOWED_ORIGINS 覆盖
+    - "http://localhost:9528"
+    - "http://127.0.0.1:9528"
+    - "http://localhost:9090"
+
+
+# 安全配置
+security:
+  bcrypt_cost: 10  # bcrypt 成本因子（4-31，默认10）
+
+# 日志配置
+log:
+  level: info  # 日志级别：debug, info, warn, error
+  path: ""     # 日志文件路径，空表示输出到控制台

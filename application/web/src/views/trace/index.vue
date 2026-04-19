@@ -5,6 +5,9 @@
     <el-button type="success" plain @click="AllFruitInfo"> 获取所有农产品信息 </el-button>
     <el-table
       :data="tracedata"
+      v-loading="loading"
+      element-loading-text="正在加载..."
+      element-loading-spinner="el-icon-loading"
       style="width: 100%"
     >
       <el-table-column type="expand">
@@ -186,8 +189,11 @@ export default {
   },
   methods: {
     AllFruitInfo() {
+      this.loading = true
       getAllFruitInfo().then(res => {
         this.tracedata = JSON.parse(res.data)
+      }).finally(() => {
+        this.loading = false
       })
     },
     FruitHistory() {
@@ -196,17 +202,20 @@ export default {
       })
     },
     FruitInfo() {
-      var formData = new FormData()
-      formData.append('traceability_code', this.input)
-      getFruitInfo(formData).then(res => {
+      if (!this.input) {
+        this.$message.warning('请输入溯源码')
+        return
+      }
+      this.loading = true
+      getFruitInfo(this.input).then(res => {
         if (res.code === 200) {
-          // console.log(res)
           this.tracedata = []
           this.tracedata[0] = JSON.parse(res.data)
-          return
         } else {
           this.$message.error(res.message)
         }
+      }).finally(() => {
+        this.loading = false
       })
     }
   }

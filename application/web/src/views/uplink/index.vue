@@ -158,7 +158,11 @@ export default {
   },
   methods: {
     submittracedata() {
-      console.log(this.tracedata)
+      // 验证溯源码（非种植户需要输入）
+      if (this.userType !== '种植户' && this.userType !== '消费者' && !this.tracedata.traceability_code) {
+        this.$message.warning('请输入溯源码')
+        return
+      }
       const loading = this.$loading({
         lock: true,
         text: '数据上链中...',
@@ -213,9 +217,8 @@ export default {
             type: 'error'
           })
         }
-      }).catch(err => {
+      }).catch(() => {
         loading.close()
-        console.log(err)
       })
     },
     onImageSelected(file) {
@@ -223,7 +226,18 @@ export default {
       this.imagePreview = URL.createObjectURL(file.raw)
       this.imageFile = file.raw
     },
-    beforeUpload() {
+    beforeUpload(file) {
+      const isImage = file.type.startsWith('image/')
+      const isLt2M = file.size / 1024 / 1024 < 2
+
+      if (!isImage) {
+        this.$message.error('只能上传图片文件!')
+        return false
+      }
+      if (!isLt2M) {
+        this.$message.error('图片大小不能超过 2MB!')
+        return false
+      }
       // 禁止自动上传
       return false
     }

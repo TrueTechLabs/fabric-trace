@@ -17,7 +17,8 @@
             name="username"
             type="text"
             tabindex="1"
-            auto-complete="on"
+            auto-complete="username"
+            aria-label="用户名输入框"
           />
         </el-form-item>
 
@@ -33,7 +34,8 @@
             placeholder="请输入密码"
             name="password"
             tabindex="2"
-            auto-complete="on"
+            auto-complete="current-password"
+            aria-label="密码输入框"
             @keyup.enter.native="handleLogin"
           />
           <span class="show-pwd" @click="showPwd">
@@ -44,6 +46,7 @@
         <el-button :loading="loading" type="primary" style="width:30%;margin-bottom:30px; float: right" @click.native.prevent="handleLogin">登录</el-button>
       </div>
       <div v-show="!isLoginPage">
+        <el-form ref="registerForm" :model="registerForm" :rules="registerRules">
         <el-form-item prop="username">
           <span class="svg-container">
             <svg-icon icon-class="user" />
@@ -53,7 +56,8 @@
             placeholder="请输入账号"
             name="username"
             type="text"
-            auto-complete="on"
+            auto-complete="username"
+            aria-label="注册用户名输入框"
           />
         </el-form-item>
         <el-form-item prop="password">
@@ -67,7 +71,8 @@
             :type="passwordType"
             placeholder="请输入密码"
             name="password"
-            auto-complete="on"
+            auto-complete="new-password"
+            aria-label="注册密码输入框"
             style="color: white !important;"
           />
           <span class="show-pwd" @click="showPwd">
@@ -82,8 +87,9 @@
             v-model="registerForm.password2"
             placeholder="请再次输入密码"
             name="password"
-            auto-complete="on"
+            auto-complete="new-password"
             :type="passwordType"
+            aria-label="确认密码输入框"
           />
           <span class="show-pwd" @click="showPwd">
             <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
@@ -101,6 +107,7 @@
         </el-form-item>
         <el-button :loading="loading" type="info" style="width:20%;margin-bottom:30px;" @click="handleRegister">返回</el-button>
         <el-button :loading="loading" type="primary" style="width:30%;margin-bottom:30px; float: right" @click.native.prevent="submitRegister">提交注册</el-button>
+        </el-form>
       </div>
       <!-- <div class="tips">
         <span style="margin-right:20px;">提示：可以放一些提示</span>
@@ -121,8 +128,40 @@ export default {
         password: ''
       },
       loginRules: {
-        username: [{ required: true }],
-        password: [{ required: true }]
+        username: [
+          { required: true, message: '请输入用户名', trigger: 'blur' },
+          { min: 3, max: 20, message: '长度在 3 到 20 个字符', trigger: 'blur' },
+          { pattern: /^[a-zA-Z0-9_]+$/, message: '只能包含字母、数字和下划线', trigger: 'blur' }
+        ],
+        password: [
+          { required: true, message: '请输入密码', trigger: 'blur' },
+          { min: 6, message: '密码长度不能少于6位', trigger: 'blur' }
+        ]
+      },
+      registerRules: {
+        username: [
+          { required: true, message: '请输入用户名', trigger: 'blur' },
+          { min: 3, max: 20, message: '长度在 3 到 20 个字符', trigger: 'blur' },
+          { pattern: /^[a-zA-Z0-9_]+$/, message: '只能包含字母、数字和下划线', trigger: 'blur' }
+        ],
+        password: [
+          { required: true, message: '请输入密码', trigger: 'blur' },
+          { min: 6, message: '密码长度不能少于6位', trigger: 'blur' }
+        ],
+        password2: [
+          { required: true, message: '请再次输入密码', trigger: 'blur' },
+          { min: 6, message: '密码长度不能少于6位', trigger: 'blur' },
+          { validator: (rule, value, callback) => {
+            if (value !== this.registerForm.password) {
+              callback(new Error('两次输入的密码不一致'))
+            } else {
+              callback()
+            }
+          }, trigger: 'blur' }
+        ],
+        userType: [
+          { required: true, message: '请选择角色', trigger: 'change' }
+        ]
       },
       loading: false,
       passwordType: 'password',

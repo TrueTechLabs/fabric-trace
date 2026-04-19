@@ -15,7 +15,15 @@ func Uplink(c *gin.Context) {
 	// +--------------------------------------------------------------------------+
 	// | 1 Bit Unused | 41 Bit Timestamp |  10 Bit NodeID  |   12 Bit Sequence ID |
 	// +--------------------------------------------------------------------------+
-	farmer_traceability_code := pkg.GenerateID()[1:]
+	fullID, err := pkg.GenerateID()
+	if err != nil {
+		c.JSON(500, gin.H{
+			"message": "uplink failed: failed to generate ID",
+			"error":   err.Error(),
+		})
+		return
+	}
+	farmer_traceability_code := fullID[1:]
 	args := buildArgs(c, farmer_traceability_code)
 	if args == nil {
 		return
@@ -37,7 +45,15 @@ func Uplink(c *gin.Context) {
 
 // 获取农产品的上链信息
 func GetFruitInfo(c *gin.Context) {
-	res, err := pkg.ChaincodeQuery("GetFruitInfo", c.PostForm("traceability_code"))
+	traceCode := c.PostForm("traceability_code")
+	// 验证溯源码格式
+	if err := pkg.ValidateTraceabilityCode(traceCode); err != nil {
+		c.JSON(200, gin.H{
+			"message": "查询失败：" + err.Error(),
+		})
+		return
+	}
+	res, err := pkg.ChaincodeQuery("GetFruitInfo", traceCode)
 	if err != nil {
 		c.JSON(200, gin.H{
 			"message": "查询失败：" + err.Error(),
@@ -60,6 +76,7 @@ func GetFruitList(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"message": "query failed" + err.Error(),
 		})
+		return
 	}
 	c.JSON(200, gin.H{
 		"code":    200,
@@ -76,6 +93,7 @@ func GetAllFruitInfo(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"message": "query failed" + err.Error(),
 		})
+		return
 	}
 	c.JSON(200, gin.H{
 		"code":    200,
@@ -87,7 +105,15 @@ func GetAllFruitInfo(c *gin.Context) {
 // 获取农产品上链历史
 // func (s *SmartContract) GetFruitHistory(ctx contractapi.TransactionContextInterface, traceability_code string) ([]HistoryQueryResult, error) {
 func GetFruitHistory(c *gin.Context) {
-	res, err := pkg.ChaincodeQuery("GetFruitHistory", c.PostForm("traceability_code"))
+	traceCode := c.PostForm("traceability_code")
+	// 验证溯源码格式
+	if err := pkg.ValidateTraceabilityCode(traceCode); err != nil {
+		c.JSON(200, gin.H{
+			"message": "查询失败：" + err.Error(),
+		})
+		return
+	}
+	res, err := pkg.ChaincodeQuery("GetFruitHistory", traceCode)
 	if err != nil {
 		c.JSON(200, gin.H{
 			"message": "query failed" + err.Error(),
@@ -110,22 +136,36 @@ func buildArgs(c *gin.Context, farmer_traceability_code string) []string {
 	if userType == "种植户" {
 		args = append(args, farmer_traceability_code)
 	} else {
-		// 检查溯源码是否正确
-		res, err := pkg.ChaincodeQuery("GetFruitInfo", c.PostForm("traceability_code"))
-		if res == "" || err != nil || len(c.PostForm("traceability_code")) != 18 {
+		// 验证溯源码格式
+		traceCode := c.PostForm("traceability_code")
+		if err := pkg.ValidateTraceabilityCode(traceCode); err != nil {
 			c.JSON(200, gin.H{
-				"message": "请检查溯源码是否正确!!",
+				"message": "请检查溯源码是否正确: " + err.Error(),
 			})
 			return nil
-		} else {
-			args = append(args, c.PostForm("traceability_code"))
 		}
+		// 检查溯源码是否存在
+		res, err := pkg.ChaincodeQuery("GetFruitInfo", traceCode)
+		if res == "" || err != nil {
+			c.JSON(200, gin.H{
+				"message": "溯源码不存在",
+			})
+			return nil
+		}
+		args = append(args, traceCode)
 	}
-	args = append(args, c.PostForm("arg1"))
-	args = append(args, c.PostForm("arg2"))
-	args = append(args, c.PostForm("arg3"))
-	args = append(args, c.PostForm("arg4"))
-	args = append(args, c.PostForm("arg5"))
+	// 验证并清理输入参数
+	for i := 1; i <= 5; i++ {
+		arg := c.PostForm(fmt.Sprintf("arg%d", i))
+		cleanArg, err := pkg.TrimAndValidate(arg, pkg.MaxFieldLength)
+		if err != nil && arg != "" {
+			c.JSON(200, gin.H{
+				"message": fmt.Sprintf("参数arg%d无效: %v", i, err),
+			})
+			return nil
+		}
+		args = append(args, cleanArg)
+	}
 	file, _ := c.FormFile("file")
 	if file != nil {
 		// 保存前端传的图片

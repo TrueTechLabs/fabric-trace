@@ -1,0 +1,143 @@
+// 响应式设计样式
+
+// 平板设备 (768px - 1024px)
+@media (max-width: 1024px) {
+  .login-form {
+    width: 60%;
+    padding: 120px 20px 0;
+  }
+
+  .trace-container,
+  .uplink-container {
+    margin: 20px;
+  }
+}
+
+// 移动设备 (小于768px)
+@media (max-width: 768px) {
+  // 登录页面
+  .login-form {
+    width: 95%;
+    padding: 50px 15px 0;
+  }
+
+  .login-container .title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  // 溯源页面
+  .trace-container,
+  .uplink-container {
+    margin: 15px;
+    padding: 10px;
+  }
+
+  // 表格响应式
+  .el-table {
+    font-size: 12px;
+
+    .el-table__header th {
+      padding: 8px 0;
+      font-size: 12px;
+    }
+
+    .el-table__body td {
+      padding: 8px 0;
+    }
+  }
+
+  // 展开行响应式
+  .demo-table-expand {
+    .el-form-item {
+      width: 100% !important;
+      margin-bottom: 12px;
+    }
+
+    label {
+      width: 80px !important;
+      font-size: 12px;
+    }
+  }
+
+  // 上传页面
+  .uplink-container {
+    .el-form-item {
+      margin-bottom: 15px;
+    }
+
+    .el-input {
+      font-size: 14px;
+    }
+  }
+
+  // 按钮响应式
+  .el-button {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  // 卡片响应式
+  .el-card {
+    .el-card__header {
+      padding: 12px 15px;
+    }
+
+    .el-card__body {
+      padding: 15px;
+    }
+  }
+
+  // 图片预览
+  .el-image {
+    width: 80px !important;
+    height: 80px !important;
+  }
+}
+
+// 小屏手机 (小于480px)
+@media (max-width: 480px) {
+  .login-form {
+    width: 100%;
+    padding: 30px 10px 0;
+  }
+
+  .login-container .title {
+    font-size: 18px;
+  }
+
+  .el-button {
+    width: 100% !important;
+    margin-bottom: 10px !important;
+    float: none !important;
+  }
+
+  .trace-text {
+    font-size: 18px !important;
+    line-height: 30px !important;
+  }
+}
+
+// 横屏模式优化
+@media (max-height: 600px) and (orientation: landscape) {
+  .login-form {
+    padding: 20px 15px 0;
+  }
+
+  .login-container .title {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+}
+
+// 高分辨率屏幕优化
+@media (min-width: 1920px) {
+  .login-form {
+    width: 40%;
+    padding: 200px 50px 0;
+  }
+
+  .trace-text {
+    font-size: 36px;
+  }
+}

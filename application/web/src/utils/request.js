@@ -58,9 +58,42 @@ service.interceptors.response.use(
     }
   },
   error => {
-    console.log('err' + error) // for debug
+    let message = '操作失败'
+    if (error.response) {
+      switch (error.response.status) {
+        case 401:
+          message = '登录已过期，请重新登录'
+          // 401自动跳转登录
+          store.dispatch('user/resetToken').then(() => {
+            location.href = '/login'
+          })
+          break
+        case 403:
+          message = '没有权限执行此操作'
+          break
+        case 404:
+          message = '请求的资源不存在'
+          break
+        case 500:
+          message = '服务器错误，请稍后重试'
+          break
+        case 502:
+        case 503:
+        case 504:
+          message = '服务暂时不可用，请稍后重试'
+          break
+        default:
+          message = error.response.data?.message || error.response.data?.error || '请求失败'
+      }
+    } else if (error.message.includes('timeout')) {
+      message = '请求超时，请检查网络连接'
+    } else if (error.message.includes('Network')) {
+      message = '网络连接失败，请检查网络'
+    } else if (error.message) {
+      message = error.message
+    }
     Message({
-      message: error.message,
+      message,
       type: 'error',
       duration: 5 * 1000
     })
