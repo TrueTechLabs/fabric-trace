@@ -56,7 +56,7 @@
 ---
 
 ## 🤝 对外合作
-- 🎓 与某高校合作完成真实区块链溯源项目
+- 🎓 与多个企业、高校合作完成真实区块链溯源项目
 - 🏢 多家农产品企业、科研机构试用与关注
 - ✅ 非常适合国内中小企业进行产品溯源落地
 
@@ -88,7 +88,7 @@
 ### 技术栈
 
 - 区块链：Hyperledger Fabric V2.5
-- 后端：Go + Gin
+- 后端：Go + Gin / Java Spring Boot
 - 前端：Vue.js
 - 数据库：MySQL
 - 压测工具：Tape（课程包含 Caliper）
@@ -278,7 +278,21 @@
 	```
 	**然后再重新启动区块链网络**
 
-5. 启动后端 在fabric-trace/application/backend目录下： 执行： `go run main.go`
+5. 启动后端（Go 或 Java 二选一）
+
+	**Go 后端**（默认）：在 `fabric-trace/application/backend` 目录下：
+	```bash
+	go run main.go
+	```
+
+	**Java 后端**（Spring Boot）：在 `fabric-trace/application/backend-java` 目录下：
+	```bash
+	# 首次需编译打包
+	mvn clean package -DskipTests
+	# 启动服务
+	java -jar target/trace-backend-1.0.0.jar
+	```
+	> Java 后端需要 JDK 17+ 和 Maven 环境，详细部署步骤见 [backend-java/README.md](application/backend-java/README.md)
 
 6. 修改后端IP，将以下文件中的IP：`119.45.247.29`，换成自己云服务器的IP。
 	```bash

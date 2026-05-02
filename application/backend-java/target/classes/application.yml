@@ -1,0 +1,40 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3337/fabrictrace?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&createDatabaseIfNotExist=true
+    username: root
+    password: fabrictrace
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+
+jwt:
+  secret: testsecret
+  issuer: fabricTraceServer
+  expiration: 172800000
+
+fabric:
+  msp-id: Org1MSP
+  peer-endpoint: 127.0.0.1:7051
+  gateway-peer: peer0.org1.example.com
+  tls-cert-path: ../../blockchain/network/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt
+  cert-path: ../../blockchain/network/organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/signcerts/User1@org1.example.com-cert.pem
+  key-path: ../../blockchain/network/organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/keystore/
+  channel-name: mychannel
+  chaincode-name: trace
+
+file:
+  upload-path: files/uploadfiles/
+  image-path: files/images/
